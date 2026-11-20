@@ -276,15 +276,15 @@
       background: var(--blue-bright);
     }
 
-    .hero-copy h1 {
-      max-width: 590px;
-      margin-bottom: 20px;
-      color: #fff;
-      font-size: clamp(38px,4.4vw,62px);
-      font-weight: 850;
-      line-height: 1.04;
-      letter-spacing: -1.8px;
-      text-wrap: balance;
+    .hero-copy h1.hero-headline {
+      max-width: none;
+      font-size: clamp(36px,3.7vw,52px);
+      line-height: 1.12;
+      letter-spacing: -1.6px;
+    }
+    .hero-headline span { 
+      display: block;
+      white-space: nowrap;
     }
 
     .hero-copy p {
@@ -1105,6 +1105,10 @@
         font-size: clamp(34px,9vw,48px);
         letter-spacing: -1px;
       }
+      .hero-copy h1.hero-headline {
+  font-size: clamp(27px, 7.2vw, 40px);
+  line-height: 1.15;
+}
 
       .hero-copy p {
         max-width: 540px;
@@ -1361,17 +1365,14 @@
         <article class="hero-slide active" aria-hidden="false">
 
           <div class="hero-copy">
-            <span class="hero-kicker">MICHIBA · AUTOMOTIVE LIGHTING</span>
+            <h1 class="hero-headline">
+              <span>Brighter Vision.</span>
+              <span>Better Driving.</span>
 
-            <h1>
-              Brighter Vision.<br>
-              Better Driving.
             </h1>
-
             <p>
-              Discover MICHIBA automotive lighting bulbs,
-              designed to deliver reliable illumination
-              and enhanced visibility.
+              Discover MICHIBA automotive lighting bulbs, designed to deliver
+              reliable illumination and enhanced visibility.
             </p>
 
             <div class="hero-actions">
@@ -1400,7 +1401,6 @@
         <article class="hero-slide" aria-hidden="true">
 
           <div class="hero-copy">
-            <span class="hero-kicker">VTHREE · AUTOMOTIVE GAUGES</span>
 
             <h1>
               Precision in Every<br>
