@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | First Priority Auto Spare Parts</title>
+
+<style>
+:root {
+  --blue: #269bc4;
+  --navy: #123d60;
+  --text: #424e57;
+  --light-blue: #eaf6fa;
+  --border: #dce8ed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--text);
+}
+
+/* HEADER */
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 8px 30px;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.logo-text strong {
+  color: #173d60;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.logo-text small {
+  color: #526477;
+  font-size: 13px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4c5962;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 0;
+  position: relative;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--blue);
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 3px;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+/* PAGE BANNER */
+
+.contact-banner {
+  background: var(--light-blue);
+  padding: 32px 30px;
+}
+
+.banner-container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.banner-container h1 {
+  color: var(--navy);
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+
+.banner-container p {
+  color: #647b88;
+  font-size: 15px;
+}
+
+/* CONTACT CONTENT */
+
+.contact-container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 55px 30px 70px;
+}
+
+.section-heading {
+  color: var(--navy);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.heading-line {
+  width: 70px;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+.intro-text {
+  color: #68737a;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  max-width: 750px;
+}
+
+/* CONTACT CARDS */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.contact-card {
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: 8px;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 5px 18px rgba(18,61,96,0.07);
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.contact-card h3 {
+  color: var(--navy);
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.contact-card p {
+  color: #66727a;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.contact-card a {
+  color: #66727a;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+  color: var(--blue);
+}
+
+/* BOTTOM MESSAGE */
+
+.contact-message {
+  margin-top: 35px;
+  padding: 28px;
+  background: var(--light-blue);
+  border-left: 4px solid var(--blue);
+  border-radius: 4px;
+}
+
+.contact-message h3 {
+  color: var(--navy);
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.contact-message p {
+  color: #64727b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+  background: #12344c;
+  color: #fff;
+  text-align: center;
+  padding: 22px;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+  .logo-text strong {
+    font-size: 18px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+}
+
+@media(max-width: 650px) {
+  .header-container {
+    padding: 10px 18px;
+    min-height: 75px;
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-text strong {
+    font-size: 15px;
+  }
+
+  .logo-text small {
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 10px 22px 18px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .contact-banner {
+    padding: 30px 22px;
+  }
+
+  .banner-container h1 {
+    font-size: 29px;
+  }
+
+  .contact-container {
+    padding: 38px 22px 50px;
+  }
+
+  .section-heading {
+    font-size: 25px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-container">
+
+    <a href="index.html" class="logo">
+
+      <!-- Use the same logo image path as about.html -->
+      <img src="fp-logo.jpeg"
+           alt="First Priority FP Logo">
+
+      <span class="logo-text">
+        <strong>FIRST PRIORITY</strong>
+        <small>Auto Spare Parts Trading LLC</small>
+      </span>
+
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+
+<section class="contact-banner">
+  <div class="banner-container">
+    <h1>Contact Us</h1>
+    <p>We're Here to Assist You With Your Automotive Spare Parts Needs</p>
+  </div>
+</section>
+
+<!-- CONTACT INFORMATION -->
+
+<main class="contact-container">
+
+  <h2 class="section-heading">Get In Touch</h2>
+  <div class="heading-line"></div>
+
+  <p class="intro-text">
+    Have a question or looking for automotive electrical spare parts?
+    Get in touch with First Priority Auto Spare Parts Trading L.L.C.
+    Our team will be happy to assist you.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- LOCATION -->
+
+    <div class="contact-card">
+      <div class="contact-icon">⌖</div>
+
+      <h3>Our Location</h3>
+
+      <p>
+        P.O. Box: 376747<br>
+        Shop No. 37, Bin Tani Building,<br>
+        Deira, Dubai - U.A.E.
+      </p>
+    </div>
+
+    <!-- PHONE -->
+
+    <div class="contact-card">
+      <div class="contact-icon">☎</div>
+
+      <h3>Phone Numbers</h3>
+
+      <a href="tel:+97142225152">+971 4 2225152</a>
+      <a href="tel:+971502566334">+971 50 2566334</a>
+      <a href="tel:+971529201020">+971 52 9201020</a>
+    </div>
+
+    <!-- EMAIL -->
+
+    <div class="contact-card">
+      <div class="contact-icon">✉</div>
+
+      <h3>Email Address</h3>
+
+      <a href="mailto:firstpriority2@gmail.com">
+        firstpriority2@gmail.com
+      </a>
+    </div>
+
+    <!-- WEBSITE -->
+
+    <div class="contact-card">
+      <div class="contact-icon">◎</div>
+
+      <h3>Website</h3>
+
+      <a href="https://www.firstpriorityautoparts.com"
+         target="_blank"
+         rel="noopener noreferrer">
+        www.firstpriorityautoparts.com
+      </a>
+    </div>
+
+  </div>
+
+  <!-- CONTACT MESSAGE -->
+
+  <section class="contact-message">
+
+    <h3>Let's Connect</h3>
+
+    <p>
+      At First Priority, we value every customer relationship.
+      Whether you are an automotive workshop, retailer,
+      transportation company or business partner, we look forward
+      to hearing from you and supporting your requirements.
+    </p>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  © <span id="year"></span>
+  First Priority Auto Spare Parts Trading LLC
+  All Rights Reserved.
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+
+menuToggle.addEventListener("click", () => {
+  const open = navigation.classList.toggle("show");
+  menuToggle.setAttribute("aria-expanded", open);
+  menuToggle.textContent = open ? "✕" : "☰";
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("show");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
