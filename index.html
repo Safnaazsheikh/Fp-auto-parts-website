@@ -360,10 +360,20 @@
   object-fit: contain;
   object-position: center;
   border: none;
-  border-radius: 0;
+  border-radius: 28px;
   box-shadow: none;
-  filter: none;
-  transform: translateY(-60px) !important;
+  /* Blend the image edges into the banner */
+  -webkit-mask-image: radial-gradient(
+    ellipse 90% 90% at center,
+    #000 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 90% 90% at center,
+    #000 78%,
+    transparent 100%
+  );
+  transform: translateY(-60px);
 }
 
     .hero-brand-mark {
