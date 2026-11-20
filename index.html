@@ -3,1538 +3,1269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#015B8F">
-  <meta name="description" content="First Priority Auto Parts - Explore our automobile spare parts catalogue.">
-  <title>First Priority Auto Spare Parts | FP</title>
+  <meta name="theme-color" content="#062747">
+  <meta name="description" content="First Priority Auto Spare Parts Trading, Dubai. Explore MICHIBA automotive lighting bulbs, VTHREE automotive gauges and FP aftermarket LED lights.">
+  <title>First Priority Auto Spare Parts | Dubai, UAE</title>
 
   <style>
     :root {
-  --blue: #00A0D0;
-  --cyan: #B5DEF4;
-  --dark-blue: #015B8F;
-  --navy: #00314A;
-  --text: #15364A;
-  --muted: #5C7180;
-  --background: #F3FAFD;
-  --white: #FFFFFF;
-}
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --navy: #062747;
+      --navy-deep: #031a31;
+      --blue: #079ac7;
+      --blue-bright: #16b6e5;
+      --pale-blue: #eaf7fc;
+      --ink: #153247;
+      --muted: #637786;
+      --surface: #f4f8fb;
+      --white: #fff;
+      --border: #e2eaf0;
+      --shadow: 0 16px 42px rgba(6, 39, 71, .10);
+      --radius: 16px;
+      --container: 1200px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--ink);
       background: var(--white);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-
-    button, input {
-      font: inherit;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1180px, 90%);
-      margin: auto;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
 
     /* HEADER */
-
-    header {
-      background: white;
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 15px rgba(0,0,0,.07);
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid rgba(226,234,240,.9);
+      box-shadow: 0 5px 22px rgba(6,39,71,.055);
+      backdrop-filter: blur(12px);
     }
-
     .navbar {
-      min-height: 82px;
+      min-height: 88px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      gap: 25px;
+      gap: 28px;
     }
-
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
+      min-width: 245px;
     }
-
     .brand-logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #FFFFFF;
-  flex-shrink: 0;
-}
-
-    .brand-name {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--dark-blue);
-      line-height: 1.2;
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
     }
-
+    .brand-name {
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 850;
+      line-height: 1.15;
+      letter-spacing: .35px;
+    }
     .brand-name span {
       display: block;
+      margin-top: 6px;
       color: var(--blue);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2.1px;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
-      font-size: 14px;
-      font-weight: 600;
+      justify-content: flex-end;
+      gap: clamp(17px, 2.4vw, 32px);
+      color: #29485d;
+      font-size: 13px;
+      font-weight: 750;
     }
-
-    .nav-links a:hover {
-      color: var(--blue);
+    .nav-links > a, .dropdown-toggle {
+      transition: color .2s ease;
     }
-
-    .nav-cta, .primary-btn {
+    .nav-links > a:hover, .dropdown-toggle:hover { color: var(--blue); }
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      color: #fff !important;
       background: var(--blue);
-      color: white;
-      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 7px 18px rgba(7,154,199,.18);
+    }
+    .nav-contact:hover { background: var(--navy); }
+    .dropdown { position: relative; }
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-weight: inherit;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -18px;
+      min-width: 225px;
+      padding: 9px;
+      list-style: none;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--blue);
+      border-radius: 0 0 12px 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: .2s ease;
+    }
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
       border-radius: 7px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 650;
     }
-
-    .nav-cta:hover, .primary-btn:hover {
-      background: var(--dark-blue);
-    }
-
+    .dropdown-menu a:hover { background: var(--pale-blue); color: var(--blue); }
     .menu-toggle {
       display: none;
-      border: none;
-      background: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--dark-blue);
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 23px;
     }
-/* HERO BRAND CAROUSEL */
 
-.hero {
-  position: relative;
-  background: #00314A;
-  color: #FFFFFF;
-  overflow: hidden;
-  padding: 0;
-  min-height: 440px;
-}
+    /* HERO CAROUSEL */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy-deep);
+    }
+    .hero-carousel {
+      position: relative;
+      min-height: 560px;
+      background: var(--navy-deep);
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      align-items: stretch;
+      min-height: 560px;
+      padding: 0;
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .65s ease, visibility .65s ease;
+      background:
+        radial-gradient(ellipse at 46% 50%, rgba(0,119,190,.23), transparent 46%),
+        linear-gradient(115deg, #031a31 0%, #062747 58%, #07345b 100%);
+    }
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      max-width: 660px;
+      padding: 76px max(32px, calc((100vw - var(--container)) / 2)) 92px
+               max(24px, calc((100vw - var(--container)) / 2));
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #8edcf4;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+    }
+    .hero-kicker::before {
+      content: "";
+      width: 27px;
+      height: 2px;
+      background: var(--blue-bright);
+    }
+    .hero-copy h1 {
+      max-width: 590px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: clamp(38px, 4.4vw, 62px);
+      font-weight: 850;
+      line-height: 1.04;
+      letter-spacing: -1.8px;
+      text-wrap: balance;
+    }
+    .hero-copy p {
+      max-width: 480px;
+      margin-bottom: 30px;
+      color: #d4e5f1;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 17px; flex-wrap: wrap; }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 21px;
+      border: 1px solid var(--blue-bright);
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+    .hero-btn:hover { background: #fff; color: var(--navy); border-color: #fff; transform: translateY(-2px); }
+    .hero-note { color: #9db6c8; font-size: 12px; font-weight: 650; }
+    .hero-media {
+      position: relative;
+      min-width: 0;
+      min-height: 560px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 76px 58px 66px 26px;
+      background:
+        radial-gradient(ellipse at 62% 52%, rgba(17,150,205,.22), transparent 58%),
+        linear-gradient(135deg, rgba(3,26,49,.12), rgba(0,12,25,.22));
+    }
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 22%;
+      background: linear-gradient(90deg, #062747, rgba(6,39,71,0));
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-media img {
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      max-height: 410px;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 22px 32px rgba(0,0,0,.28));
+      border-radius: 10px;
+    }
+    .hero-brand-mark {
+      position: absolute;
+      z-index: 2;
+      top: 24px;
+      right: 42px;
+      min-width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 9px;
+      background: rgba(255,255,255,.96);
+      color: #062747;
+      box-shadow: 0 10px 28px rgba(0,0,0,.22);
+      font-size: 20px;
+      font-weight: 950;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .hero-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50%;
+      background: rgba(3,26,49,.58);
+      color: #fff;
+      font-size: 24px;
+      transform: translateY(-50%);
+      transition: .2s ease;
+    }
+    .hero-arrow:hover { background: var(--blue); border-color: var(--blue); }
+    .hero-prev { left: 22px; }
+    .hero-next { right: 22px; }
+    .hero-dots {
+      position: absolute;
+      z-index: 6;
+      left: 50%;
+      bottom: 25px;
+      display: flex;
+      gap: 9px;
+      transform: translateX(-50%);
+    }
+    .hero-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: 0;
+      border-radius: 20px;
+      background: rgba(255,255,255,.48);
+      transition: width .25s ease, background .25s ease;
+    }
+    .hero-dot.active { width: 28px; background: #fff; }
 
-.hero-slider {
-  position: relative;
-  min-height: 440px;
-}
-
-.hero-slide {
-  display: none;
-  position: relative;
-  min-height: 440px;
-  align-items: center;
-  overflow: hidden;
-  background: linear-gradient(
-    110deg,
-    #00314A 0%,
-    #015B8F 65%,
-    #007EAD 100%
-  );
-}
-
-.hero-slide.active {
-  display: flex;
-  animation: heroFade 0.7s ease;
-}
-
-@keyframes heroFade {
-  from { opacity: 0.65; }
-  to { opacity: 1; }
-}
-
-.hero-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 31, 48, 0.92) 0%,
-    rgba(0, 49, 74, 0.68) 34%,
-    rgba(0, 49, 74, 0.18) 62%,
-    rgba(0, 49, 74, 0.02) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-slide-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  filter: brightness(1.22) contrast(1.12) saturate(1.15);
-  transform: scale(1.02);
-}
-
-.hero-content {
-  width: min(1180px, 90%);
-  margin: auto;
-  padding: 75px 0;
-  position: relative;
-  z-index: 2;
-  max-width: 1180px;
-}
-
-.hero-content-inner {
-  max-width: 570px;
-}
-
-.hero-brand-label {
-  display: inline-block;
-  color: #B5DEF4;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.hero-content h1 {
-  color: #FFFFFF;
-  font-size: clamp(32px, 4.2vw, 54px);
-  line-height: 1.12;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.hero-content p {
-  color: #EAF7FC;
-  font-size: 17px;
-  max-width: 480px;
-  margin-bottom: 28px;
-  line-height: 1.7;
-}
-
-.hero-btn {
-  display: inline-block;
-  background: #FFFFFF;
-  color: #015B8F;
-  padding: 14px 25px;
-  border-radius: 7px;
-  font-weight: 800;
-  transition: 0.25s;
-}
-
-.hero-btn:hover {
-  background: #B5DEF4;
-  transform: translateY(-2px);
-}
-
-/* CAROUSEL ARROWS */
-
-.hero-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(255,255,255,0.65);
-  border-radius: 50%;
-  background: rgba(0,49,74,0.55);
-  color: #FFFFFF;
-  font-size: 25px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: 0.2s;
-}
-
-.hero-arrow:hover {
-  background: #00A0D0;
-  border-color: #00A0D0;
-}
-
-.hero-arrow.prev {
-  left: 25px;
-}
-
-.hero-arrow.next {
-  right: 25px;
-}
-
-/* CAROUSEL DOTS */
-
-.hero-dots {
-  position: absolute;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.hero-dot {
-  width: 10px;
-  height: 10px;
-  border: none;
-  border-radius: 50px;
-  background: rgba(255,255,255,0.55);
-  cursor: pointer;
-  padding: 0;
-  transition: 0.25s;
-}
-
-.hero-dot.active {
-  width: 30px;
-  background: #FFFFFF;
-}
-
-/* TABLET */
-
-@media (max-width: 991px) {
-  .hero,
-  .hero-slider,
-  .hero-slide {
-    min-height: 390px;
-  }
-
-  .hero-content {
-    width: 86%;
-    padding: 65px 0;
-  }
-
-  .hero-content-inner {
-    max-width: 500px;
-  }
-
-  .hero-arrow.prev {
-    left: 12px;
-  }
-
-  .hero-arrow.next {
-    right: 12px;
-  }
-
-    @media (max-width: 991px) {
-  .hero-slide::before {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 31, 48, 0.90) 0%,
-      rgba(0, 49, 74, 0.55) 55%,
-      rgba(0, 49, 74, 0.12) 100%
-    );
-  }
-}
-/* MOBILE */
-
-@media (max-width: 767px) {
-  .hero,
-  .hero-slider,
-  .hero-slide {
-    min-height: 490px;
-  }
-
-  .hero-slide-image {
-    object-position: 60% center;
-  }
-
-  @media (max-width: 767px) {
-  .hero-slide::before {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 31, 48, 0.82),
-      rgba(0, 49, 74, 0.48)
-    );
-  }
-  }
-  .hero-content {
-    width: 84%;
-    padding: 65px 0 85px;
-  }
-
-  .hero-content-inner {
-    max-width: 100%;
-  }
-
-  .hero-brand-label {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(30px, 8vw, 39px);
-  }
-
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  .hero-btn {
-    padding: 12px 19px;
-    font-size: 14px;
-  }
-
-  .hero-arrow {
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-  }
-
-  .hero-arrow.prev {
-    left: 8px;
-  }
-
-  .hero-arrow.next {
-    right: 8px;
-  }
-
-  .hero-dots {
-    bottom: 19px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide.active {
-    animation: none;
-  }
-}
-   
     /* TRUST STRIP */
-
     .trust-strip {
-      background: var(--background);
-      padding: 24px 0;
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
     }
-
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-      gap: 20px;
+      padding-block: 25px;
     }
-
-    .trust-item strong {
-      color: var(--dark-blue);
-      display: block;
-      font-size: 15px;
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 7px 18px;
     }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 12px;
+    .trust-item + .trust-item { border-left: 1px solid var(--border); }
+    .trust-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 12px;
+      background: var(--pale-blue);
+      color: var(--blue);
+      font-size: 19px;
+      font-weight: 800;
     }
+    .trust-item strong { display: block; color: var(--navy); font-size: 13px; }
+    .trust-item span { display: block; color: var(--muted); font-size: 11px; }
 
-    /* SECTION */
-
-    .section {
-      padding: 75px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 38px;
-    }
-
+    /* GENERAL SECTIONS */
+    .section { padding: 82px 0; }
+    .section-heading { max-width: 680px; margin: 0 auto 42px; text-align: center; }
     .section-heading small {
       color: var(--blue);
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
-      letter-spacing: 2px;
     }
-
     .section-heading h2 {
-      color: var(--dark-blue);
-      font-size: clamp(26px, 3vw, 36px);
-      margin: 8px 0;
+      margin: 8px 0 10px;
+      color: var(--navy);
+      font-size: clamp(29px, 3vw, 40px);
+      line-height: 1.15;
+      letter-spacing: -.7px;
     }
+    .section-heading p { color: var(--muted); font-size: 15px; }
 
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
+    /* BRAND HIGHLIGHTS */
+    .brand-section { background: var(--surface); }
+    .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .brand-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 25px rgba(6,39,71,.045);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
+    .brand-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .brand-card::after {
+      content: "";
+      position: absolute;
+      right: -38px;
+      bottom: -60px;
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(7,154,199,.13), transparent 70%);
+    }
+    .brand-card-label { color: var(--blue); font-size: 10px; font-weight: 850; letter-spacing: 1.8px; }
+    .brand-card h3 { margin: 9px 0 5px; color: var(--navy); font-size: 22px; }
+    .brand-card p { max-width: 290px; color: var(--muted); font-size: 13px; }
+    .brand-card a { display: inline-flex; margin-top: 18px; color: var(--blue); font-size: 12px; font-weight: 850; }
 
     /* CATEGORIES */
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
     .category-card {
-      border: 1px solid #E5EDF2;
-      padding: 25px 15px;
-      border-radius: 12px;
+      display: flex;
+      min-height: 158px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 22px 14px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: #fff;
       text-align: center;
       cursor: pointer;
-      background: white;
-      transition: .2s;
+      transition: .22s ease;
     }
-
-    .category-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(8,120,185,.09);
+    .category-card:hover, .category-card.active {
+      border-color: rgba(7,154,199,.55);
+      background: #f8fdff;
+      box-shadow: 0 10px 25px rgba(7,154,199,.09);
+      transform: translateY(-3px);
     }
-
     .category-icon {
-      width: 58px;
-      height: 58px;
-      background: #E8F7FC;
-      color: var(--blue);
-      border-radius: 50%;
       display: grid;
       place-items: center;
-      font-size: 26px;
-      margin: 0 auto 12px;
+      width: 53px;
+      height: 53px;
+      border-radius: 15px;
+      background: var(--pale-blue);
+      color: var(--blue);
+      font-size: 24px;
     }
-
-    .category-card h3 {
-      color: var(--dark-blue);
-      font-size: 15px;
-    }
+    .category-card h3 { color: var(--navy); font-size: 14px; }
+    .category-card p { color: var(--muted); font-size: 11px; }
 
     /* PRODUCTS */
-
-    .products-section {
-      background: var(--background);
-    }
-/* PRODUCTS DROPDOWN */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 210px;
-    background: #FFFFFF;
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    border-top: 3px solid #00A0D0;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-    z-index: 1000;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 12px 20px;
-    color: #015B8F;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.dropdown-menu li a:hover {
-    background: #EAF7FC;
-    color: #00A0D0;
-}
+    .products-section { background: var(--surface); }
     .catalogue-tools {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 26px;
     }
-
-    .search-box {
-      flex: 1;
-      min-width: 230px;
-      position: relative;
-    }
-
+    .search-box { position: relative; flex: 1; max-width: 440px; }
     .search-box input {
       width: 100%;
-      border: 1px solid #DCE5EC;
-      border-radius: 8px;
-      padding: 14px 16px;
+      min-height: 48px;
+      padding: 12px 16px 12px 43px;
+      border: 1px solid #dce6ed;
+      border-radius: 9px;
       outline: none;
-      background: white;
-    }
-
-    .search-box input:focus {
-      border-color: var(--blue);
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 10px 15px;
-      border: 1px solid #DCE5EC;
-      border-radius: 7px;
-      background: white;
-      color: var(--text);
-      cursor: pointer;
+      background: #fff;
+      color: var(--ink);
       font-size: 13px;
     }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--blue);
-      color: white;
-      border-color: var(--blue);
+    .search-box input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(7,154,199,.1); }
+    .search-icon { position: absolute; top: 11px; left: 15px; color: #7c929f; font-size: 18px; }
+    .filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .filter-btn {
+      padding: 9px 14px;
+      border: 1px solid #dce6ed;
+      border-radius: 7px;
+      background: #fff;
+      color: #4d6575;
+      font-size: 11px;
+      font-weight: 750;
+      transition: .2s ease;
     }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
+    .filter-btn:hover, .filter-btn.active { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
     .product-card {
-      background: white;
-      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #E7EDF1;
-      transition: .2s;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: #fff;
+      transition: transform .22s ease, box-shadow .22s ease;
     }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.07);
-    }
-
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .product-image {
-      height: 190px;
-      background: #EDF4F8;
       display: grid;
       place-items: center;
-      color: var(--blue);
-      font-size: 45px;
+      height: 190px;
+      padding: 16px;
+      background: #edf4f8;
+      color: #9ab2c0;
+      font-size: 38px;
     }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 15px;
-    }
-
-    .product-info {
-      padding: 17px;
-    }
-
+    .product-image img { width: 100%; height: 100%; object-fit: contain; }
+    .product-info { padding: 17px; }
     .product-category {
-      font-size: 11px;
       color: var(--blue);
-      font-weight: 800;
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
-
-    .product-info h3 {
-      font-size: 16px;
-      color: var(--dark-blue);
-      margin: 7px 0;
-    }
-
-    .product-info p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
-
+    .product-info h3 { margin: 7px 0; color: var(--navy); font-size: 15px; line-height: 1.35; }
+    .product-info p { min-height: 40px; margin-bottom: 14px; color: var(--muted); font-size: 11px; }
+    .product-meta { margin-bottom: 12px; color: var(--muted); font-size: 11px; }
     .enquiry-btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      background: #E8F7FC;
-      color: var(--blue);
-      padding: 10px;
-      text-align: center;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
+      min-height: 40px;
+      border-radius: 7px;
+      background: var(--pale-blue);
+      color: #087ca5;
+      font-size: 11px;
+      font-weight: 850;
+      transition: .2s ease;
     }
-
-    .enquiry-btn:hover {
-      background: var(--blue);
-      color: white;
-    }
-
-    .no-results {
+    .enquiry-btn:hover { background: var(--blue); color: #fff; }
+    .empty-state {
       display: none;
-      text-align: center;
-      color: var(--muted);
-      padding: 35px;
       grid-column: 1 / -1;
+      padding: 42px 20px;
+      border: 1px dashed #cbd9e2;
+      border-radius: 12px;
+      color: var(--muted);
+      text-align: center;
+      background: #fff;
+      font-size: 13px;
     }
+    .catalogue-status { margin-top: 16px; color: var(--muted); font-size: 11px; text-align: center; }
 
     /* ABOUT */
-
-    .about-grid {
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 60px; }
+    .about-visual {
+      position: relative;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about-panel {
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      min-height: 300px;
-      border-radius: 18px;
-      display: grid;
+      min-height: 350px;
       place-items: center;
-      color: white;
-      font-size: 80px;
-      font-weight: 900;
+      overflow: hidden;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(22,182,229,.4), transparent 34%),
+        linear-gradient(135deg, #062747, #0b5d85);
+      color: #fff;
     }
-
-    .about-copy small {
-      color: var(--blue);
-      font-weight: 800;
-      letter-spacing: 2px;
+    .about-visual::before, .about-visual::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
     }
-
-    .about-copy h2 {
-      font-size: 34px;
-      color: var(--dark-blue);
-      line-height: 1.2;
-      margin: 12px 0 18px;
+    .about-visual::before { width: 280px; height: 280px; }
+    .about-visual::after { width: 390px; height: 390px; }
+    .about-visual img { position: relative; z-index: 1; width: 180px; height: 180px; object-fit: contain; border-radius: 50%; }
+    .about-copy small { color: var(--blue); font-size: 11px; font-weight: 850; letter-spacing: 2px; }
+    .about-copy h2 { margin: 10px 0 17px; color: var(--navy); font-size: clamp(29px, 3vw, 39px); line-height: 1.15; }
+    .about-copy p { margin-bottom: 14px; color: var(--muted); font-size: 14px; }
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 13px 19px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 850;
     }
-
-    .about-copy p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
+    .primary-btn:hover { background: var(--navy); }
 
     /* CONTACT */
-
     .contact-section {
-      background: var(--dark-blue);
-      color: white;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(22,182,229,.2), transparent 28%),
+        linear-gradient(115deg, #031a31, #06416a);
+      color: #fff;
       text-align: center;
     }
-
-    .contact-section h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .contact-section p {
-      color: #D9EAF5;
-      margin-bottom: 25px;
-    }
-
+    .contact-section h2 { margin-bottom: 12px; color: #fff; font-size: clamp(29px, 3vw, 39px); }
+    .contact-section p { max-width: 620px; margin: 0 auto 25px; color: #d1e2ed; font-size: 14px; }
     .contact-btn {
-      background: white;
-      color: var(--dark-blue);
-      padding: 14px 25px;
-      display: inline-block;
-      border-radius: 7px;
-      font-weight: 700;
+      display: inline-flex;
+      padding: 14px 23px;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 850;
+      transition: .2s ease;
     }
+    .contact-btn:hover { background: var(--blue-bright); color: #fff; }
 
     /* FOOTER */
-
-    footer {
-      background: #082B4C;
-      color: white;
-      padding: 25px 0;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    footer p {
-      color: #D0DFE9;
-    }
+    .site-footer { padding: 25px 0; background: #02182c; color: #d4e2ec; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-inner p { font-size: 11px; }
+    .footer-links { display: flex; gap: 20px; color: #b6cbd9; font-size: 11px; }
+    .footer-links a:hover { color: #fff; }
 
     /* TABLET */
-
-    @media (max-width: 991px) {
-      .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        gap: 15px;
-      }
+    @media (max-width: 1020px) {
+      .navbar { gap: 16px; }
+      .brand { min-width: 215px; }
+      .brand-logo { width: 55px; height: 55px; flex-basis: 55px; }
+      .brand-name { font-size: 15px; }
+      .nav-links { gap: 15px; font-size: 12px; }
+      .hero-carousel, .hero-slide, .hero-media, .hero-media img { min-height: 500px; }
+      .hero-copy { padding-top: 65px; padding-bottom: 80px; }
+      .hero-copy h1 { font-size: clamp(36px, 4.5vw, 52px); }
+      .product-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
     }
 
-    /* MOBILE */
-
-    @media (max-width: 767px) {
-      .container {
-        width: 92%;
-      }
-
-      .navbar {
-        min-height: 70px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
+    @media (max-width: 760px) {
+      .container { width: min(100% - 36px, var(--container)); }
+      .navbar { min-height: 74px; }
+      .brand { min-width: 0; gap: 9px; }
+      .brand-logo { width: 48px; height: 48px; flex-basis: 48px; }
+      .brand-name { font-size: 13px; }
+      .brand-name span { font-size: 8px; letter-spacing: 1.5px; }
+      .menu-toggle { display: grid; place-items: center; }
       .nav-links {
-        display: none;
         position: absolute;
-        top: 70px;
+        top: 100%;
         left: 0;
-        width: 100%;
-        background: white;
-        padding: 22px 5%;
+        right: 0;
+        display: none;
+        align-items: stretch;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        box-shadow: 0 10px 15px rgba(0,0,0,.08);
+        gap: 4px;
+        padding: 14px 20px 20px;
+        border-top: 1px solid var(--border);
+        background: #fff;
+        box-shadow: 0 14px 24px rgba(6,39,71,.1);
       }
-
-      .nav-links.open {
-        display: flex;
+      .nav-links.open { display: flex; }
+      .nav-links > a, .dropdown-toggle { display: flex; width: 100%; padding: 12px 8px; }
+      .nav-contact { justify-content: center !important; margin-top: 5px; }
+      .dropdown-menu {
+        position: static;
+        display: none;
+        min-width: 0;
+        padding: 5px;
+        border: 0;
+        border-left: 2px solid var(--blue);
+        border-radius: 0;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
       }
-
-      .nav-cta {
-        display: inline-block;
-      }
-
-      .hero {
-        padding: 65px 0;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .trust-grid {
+      .dropdown.open .dropdown-menu { display: block; }
+      .hero-carousel { min-height: 0; }
+      .hero-slide {
+        position: relative;
+        display: none;
         grid-template-columns: 1fr;
-        gap: 15px;
+        min-height: 0;
       }
-
-      .section {
-        padding: 55px 0;
+      .hero-slide.active { display: grid; }
+      .hero-copy {
+        order: 1;
+        max-width: none;
+        padding: 48px 28px 25px;
       }
-
-      .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+      .hero-kicker { margin-bottom: 13px; font-size: 9px; letter-spacing: 1.8px; }
+      .hero-copy h1 { max-width: 560px; margin-bottom: 13px; font-size: clamp(34px, 9vw, 48px); letter-spacing: -1px; }
+      .hero-copy p { max-width: 540px; margin-bottom: 20px; font-size: 13px; line-height: 1.65; }
+      .hero-btn { padding: 12px 16px; font-size: 12px; }
+      .hero-media {
+        order: 2;
+        min-height: 260px;
+        max-height: 320px;
+        padding: 58px 22px 22px;
+        background: #062747;
       }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+      .hero-media img {
+        width: 100%;
+        height: 205px;
+        min-height: 0;
+        max-height: 205px;
+        object-fit: contain;
       }
-
-      .product-image {
-        height: 145px;
-      }
-
-      .product-info {
-        padding: 12px;
-      }
-
-      .product-info h3 {
-        font-size: 14px;
-      }
-
-      .product-info p {
+      .hero-media::before { display: none; }
+      .hero-brand-mark {
+        top: 12px;
+        right: 16px;
+        min-width: 105px;
+        padding: 6px 10px;
         font-size: 12px;
       }
-
-      .catalogue-tools {
-        flex-direction: column;
-      }
-
-      .filters {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 5px;
-      }
-
-      .filter-btn {
-        white-space: nowrap;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .about-panel {
-        min-height: 210px;
-        font-size: 65px;
-      }
-
-      .about-copy h2, .contact-section h2 {
-        font-size: 28px;
-      }
+      .hero-arrow { top: auto; bottom: 112px; width: 36px; height: 36px; font-size: 20px; }
+      .hero-prev { left: 10px; }
+      .hero-next { right: 10px; }
+      .hero-dots { bottom: 17px; }
+      .trust-grid { grid-template-columns: 1fr; padding-block: 10px; }
+      .trust-item { justify-content: flex-start; padding: 12px 4px; }
+      .trust-item + .trust-item { border-left: 0; border-top: 1px solid var(--border); }
+      .section { padding: 58px 0; }
+      .section-heading { margin-bottom: 30px; }
+      .section-heading p { font-size: 13px; }
+      .brand-grid { grid-template-columns: 1fr; gap: 13px; }
+      .brand-card { min-height: 175px; padding: 23px; }
+      .category-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+      .category-card { min-height: 135px; padding: 16px 9px; }
+      .catalogue-tools { align-items: stretch; flex-direction: column; }
+      .search-box { max-width: none; }
+      .filters { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; }
+      .filter-btn { flex: 0 0 auto; white-space: nowrap; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+      .product-image { height: 140px; padding: 10px; }
+      .product-info { padding: 12px; }
+      .product-info h3 { font-size: 13px; }
+      .product-info p { min-height: 48px; font-size: 10px; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-visual { min-height: 235px; }
+      .about-visual img { width: 135px; height: 135px; }
+      .about-copy h2 { font-size: 30px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-links { flex-wrap: wrap; gap: 14px; }
     }
 
-    @media (max-width: 360px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 380px) {
+      .container { width: calc(100% - 28px); }
+      .brand-name { font-size: 11px; }
+      .hero-copy { padding-inline: 21px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-image { height: 180px; }
     }
-    /* FIRST PRIORITY BRAND STYLING */
 
-.eyebrow {
-  color: #B5DEF4;
-}
-
-.hero p {
-  color: #EAF7FC;
-}
-
-.hero-btn {
-  color: #015B8F;
-}
-
-.hero-btn:hover {
-  background: #B5DEF4;
-}
-
-.category-icon,
-.enquiry-btn {
-  background: #EAF7FC;
-}
-
-.product-image {
-  background: #EDF8FC;
-}
-
-.about-panel {
-  background: linear-gradient(135deg, #015B8F, #00A0D0);
-}
-
-.contact-section {
-  background: #015B8F;
-}
-
-footer {
-  background: #00314A;
-}
-
-/* TABLET RESPONSIVENESS */
-
-@media (max-width: 991px) {
-  .hero-content {
-    max-width: 58%;
-  }
-
-  .hero::after {
-    width: 210px;
-    right: 4%;
-  }
-}
-
-/* MOBILE RESPONSIVENESS */
-
-@media (max-width: 767px) {
-  .hero {
-    padding: 65px 0;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero::after {
-    display: none;
-  }
-
-  .brand-logo {
-    width: 52px;
-    height: 52px;
-  }
-}
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
   </style>
 </head>
 
 <body>
-
   <!-- HEADER -->
-  <header>
+  <header class="site-header">
     <div class="container navbar">
-      <a href="#home" class="brand">
-        <img
-  src="fp-logo.jpeg"
-  alt="First Priority Auto Parts Logo"
-  class="brand-logo"
->
-        <div class="brand-name">
-          FIRST PRIORITY
-          <span>AUTO SPARE PARTS</span>
-        </div>
+      <a href="#home" class="brand" aria-label="First Priority Auto Spare Parts home">
+        <img src="fp-logo.jpeg" alt="First Priority logo" class="brand-logo">
+        <span class="brand-name">FIRST PRIORITY<span>AUTO SPARE PARTS</span></span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#home">Home</a>
-
-<div class="dropdown">
-    <a href="#products">Products ▾</a>
-    <ul class="dropdown-menu">
-        <li><a href="#engine">Engine</a></li>
-        <li><a href="#powertrain">Power Train</a></li>
-        <li><a href="#body">Body</a></li>
-        <li><a href="#electrical">Electrical</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#accessories">Accessories</a></li>
-        <li><a href="#liquids">Liquids & Lubricants</a></li>
-    </ul>
-</div>
+        <div class="dropdown" id="productsDropdown">
+          <button class="dropdown-toggle" type="button" aria-expanded="false">Products <span aria-hidden="true">⌄</span></button>
+          <ul class="dropdown-menu" id="navCategoryLinks">
+            <li><a href="#products">View all products</a></li>
+          </ul>
+        </div>
+        <a href="#brands">Our Brands</a>
         <a href="#about">About Us</a>
-        <a href="#contact" class="nav-cta">Contact Us</a>
+        <a href="#contact" class="nav-contact">Contact Us</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO BRAND CAROUSEL -->
-<section class="hero" id="home">
-
-  <div class="hero-slider" id="heroSlider">
-
-    <!-- SLIDE 1: MICHIBA -->
-    <div class="hero-slide active">
-      
-
-      <img
-        src="michiba_automotive_lighting_banner.jpeg"
-        alt="MICHIBA automotive lighting bulbs"
-        class="hero-slide-image"
-      >
-
-      <div class="hero-content">
-        <div class="hero-content-inner">
-
-          <span class="hero-brand-label">
-            MICHIBA AUTOMOTIVE LIGHTING
-          </span>
-
-          <h1>
-            Brighter Vision.
-            Better Driving.
-          </h1>
-
-          <p>
-            Discover MICHIBA automotive lighting bulbs,
-            designed to deliver reliable illumination
-            and enhanced visibility.
-          </p>
-
-          <a href="#products" class="hero-btn">
-            Explore Products →
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 2: VTHREE -->
-    <div class="hero-slide">
-
-      <img
-        src="vthree_automotive_gauges_banner.jpeg"
-        alt="VTHREE automotive gauges"
-        class="hero-slide-image"
-      >
-
-      <div class="hero-content">
-        <div class="hero-content-inner">
-
-          <span class="hero-brand-label">
-            VTHREE AUTOMOTIVE GAUGES
-          </span>
-
-          <h1>
-            Precision in Every
-            Performance.
-          </h1>
-
-          <p>
-            Explore VTHREE automotive gauges,
-            bringing precision, performance
-            and control to your driving experience.
-          </p>
-
-          <a href="#products" class="hero-btn">
-            Explore Products →
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 3: FP LED LIGHTS -->
-    <div class="hero-slide">
-
-      <img
-        src="fp-led-banner.jpeg"
-        alt="FP aftermarket LED lights"
-        class="hero-slide-image"
-      >
-
-      <div class="hero-content">
-        <div class="hero-content-inner">
-
-          <span class="hero-brand-label">
-            FP AFTERMARKET LIGHTING
-          </span>
-
-          <h1>
-            Illuminate Every
-            Journey.
-          </h1>
-
-          <p>
-            Discover FP aftermarket LED lights,
-            combining advanced lighting solutions
-            with performance and style.
-          </p>
-
-          <a href="#products" class="hero-btn">
-            Explore Products →
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- PREVIOUS ARROW -->
-    <button
-      type="button"
-      class="hero-arrow prev"
-      id="heroPrev"
-      aria-label="Previous banner"
-    >
-      &#10094;
-    </button>
-
-    <!-- NEXT ARROW -->
-    <button
-      type="button"
-      class="hero-arrow next"
-      id="heroNext"
-      aria-label="Next banner"
-    >
-      &#10095;
-    </button>
-
-    <!-- SLIDE INDICATORS -->
-    <div class="hero-dots">
-
-      <button
-        type="button"
-        class="hero-dot active"
-        data-slide="0"
-        aria-label="Show MICHIBA banner"
-        aria-current="true"
-      ></button>
-
-      <button
-        type="button"
-        class="hero-dot"
-        data-slide="1"
-        aria-label="Show VTHREE banner"
-      ></button>
-
-      <button
-        type="button"
-        class="hero-dot"
-        data-slide="2"
-        aria-label="Show FP LED banner"
-      ></button>
-
-    </div>
-
-  </div>
-</section>
-
-  <!-- TRUST STRIP -->
-  <section class="trust-strip">
-    <div class="container trust-grid">
-      <div class="trust-item">
-        <strong>Automotive Parts</strong>
-        <span>Explore our catalogue</span>
-      </div>
-      <div class="trust-item">
-        <strong>Product Enquiries</strong>
-        <span>Contact our team</span>
-      </div>
-      <div class="trust-item">
-        <strong>Customer Support</strong>
-        <span>We're here to help</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-heading">
-        <small>Browse by category</small>
-        <h2>Explore Our Categories</h2>
-        <p>Find the automobile components you're looking for.</p>
-      </div>
-
-      <div class="category-grid">
-        <div class="category-card" data-category="Engine">
-          <div class="category-icon">⚙</div>
-          <h3>Engine Parts</h3>
-        </div>
-        <div class="category-card" data-category="Brake">
-          <div class="category-icon">◉</div>
-          <h3>Brake Parts</h3>
-        </div>
-        <div class="category-card" data-category="Suspension">
-          <div class="category-icon">↕</div>
-          <h3>Suspension</h3>
-        </div>
-        <div class="category-card" data-category="Filters">
-          <div class="category-icon">▤</div>
-          <h3>Filters</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="section products-section" id="products">
-    <div class="container">
-      <div class="section-heading">
-        <small>Our catalogue</small>
-        <h2>Explore Our Products</h2>
-        <p>Browse our product collection and send us your enquiries.</p>
-      </div>
-
-      <div class="catalogue-tools">
-        <div class="search-box">
-          <input type="search" id="productSearch"
-            placeholder="Search products...">
-        </div>
-
-        <div class="filters">
-          <button class="filter-btn active" data-filter="All">All</button>
-          <button class="filter-btn" data-filter="Engine">Engine</button>
-          <button class="filter-btn" data-filter="Brake">Brake</button>
-          <button class="filter-btn" data-filter="Suspension">Suspension</button>
-          <button class="filter-btn" data-filter="Filters">Filters</button>
-        </div>
-      </div>
-
-      <div class="product-grid" id="productGrid">
-
-        <article class="product-card" data-category="Engine">
-          <div class="product-image">⚙</div>
-          <div class="product-info">
-            <span class="product-category">Engine Parts</span>
-            <h3>Engine Components</h3>
-            <p>Automotive engine components.</p>
-            <a class="enquiry-btn" href="#contact">Enquire Now →</a>
+  <main>
+    <!-- HERO: same text/image layout for all three brands -->
+    <section class="hero" id="home" aria-label="Featured brands">
+      <div class="hero-carousel" id="heroCarousel">
+        <article class="hero-slide active" aria-hidden="false">
+          <div class="hero-copy">
+            <span class="hero-kicker">MICHIBA · AUTOMOTIVE LIGHTING</span>
+            <h1>Brighter Vision.<br>Better Driving.</h1>
+            <p>Discover MICHIBA automotive lighting bulbs, designed to deliver reliable illumination and enhanced visibility.</p>
+            <div class="hero-actions">
+              <a class="hero-btn" href="#products">Explore Products <span aria-hidden="true">→</span></a>
+              <span class="hero-note">Automotive lighting solutions</span>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="michiba_automotive_lighting_banner.jpeg" alt="MICHIBA automotive lighting bulbs">
+            <span class="hero-brand-mark">MICHIBA</span>
           </div>
         </article>
 
-        <article class="product-card" data-category="Brake">
-          <div class="product-image">◉</div>
-          <div class="product-info">
-            <span class="product-category">Brake Parts</span>
-            <h3>Brake Components</h3>
-            <p>Automotive braking components.</p>
-            <a class="enquiry-btn" href="#contact">Enquire Now →</a>
+        <article class="hero-slide" aria-hidden="true">
+          <div class="hero-copy">
+            <span class="hero-kicker">VTHREE · AUTOMOTIVE GAUGES</span>
+            <h1>Precision in Every<br>Performance.</h1>
+            <p>Explore VTHREE automotive gauges, bringing precision, performance and control to your driving experience.</p>
+            <div class="hero-actions">
+              <a class="hero-btn" href="#products">Explore Products <span aria-hidden="true">→</span></a>
+              <span class="hero-note">Automotive gauge solutions</span>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="vthree_automotive_gauges_banner.jpeg" alt="VTHREE automotive gauges">
+            <span class="hero-brand-mark">VTHREE</span>
           </div>
         </article>
 
-        <article class="product-card" data-category="Suspension">
-          <div class="product-image">↕</div>
-          <div class="product-info">
-            <span class="product-category">Suspension</span>
-            <h3>Suspension Parts</h3>
-            <p>Automotive suspension components.</p>
-            <a class="enquiry-btn" href="#contact">Enquire Now →</a>
+        <article class="hero-slide" aria-hidden="true">
+          <div class="hero-copy">
+            <span class="hero-kicker">FP · AFTERMARKET LED LIGHTING</span>
+            <h1>Illuminate Every<br>Journey.</h1>
+            <p>Discover FP aftermarket LED lights, combining advanced lighting solutions with performance and style.</p>
+            <div class="hero-actions">
+              <a class="hero-btn" href="#products">Explore Products <span aria-hidden="true">→</span></a>
+              <span class="hero-note">Aftermarket LED lighting solutions</span>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="fp-led-banner.jpeg" alt="FP aftermarket LED lights">
+            <span class="hero-brand-mark">FP</span>
           </div>
         </article>
 
-        <article class="product-card" data-category="Filters">
-          <div class="product-image">▤</div>
-          <div class="product-info">
-            <span class="product-category">Filters</span>
-            <h3>Automotive Filters</h3>
-            <p>Automotive filtration components.</p>
-            <a class="enquiry-btn" href="#contact">Enquire Now →</a>
+        <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Previous banner">‹</button>
+        <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="Next banner">›</button>
+        <div class="hero-dots" id="heroDots" aria-label="Choose banner">
+          <button class="hero-dot active" type="button" aria-label="Show MICHIBA banner" aria-current="true"></button>
+          <button class="hero-dot" type="button" aria-label="Show VTHREE banner"></button>
+          <button class="hero-dot" type="button" aria-label="Show FP banner"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / SERVICE HIGHLIGHTS -->
+    <section class="trust-strip" aria-label="Our service highlights">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">⚙</span>
+          <div><strong>Automotive Parts</strong><span>Explore our product catalogue</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">✉</span>
+          <div><strong>Product Enquiries</strong><span>Contact our team for assistance</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">✓</span>
+          <div><strong>Customer Support</strong><span>We're here to help</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND HIGHLIGHTS -->
+    <section class="section brand-section" id="brands">
+      <div class="container">
+        <div class="section-heading">
+          <small>Our brands</small>
+          <h2>Trusted Automotive Brands</h2>
+          <p>Explore our specialist automotive lighting and gauge brands.</p>
+        </div>
+        <div class="brand-grid">
+          <article class="brand-card">
+            <span class="brand-card-label">AUTOMOTIVE LIGHTING BULBS</span>
+            <h3>MICHIBA</h3>
+            <p>Automotive lighting solutions designed for reliable illumination and visibility.</p>
+            <a href="#products">Explore products <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="brand-card">
+            <span class="brand-card-label">AUTOMOTIVE GAUGES</span>
+            <h3>VTHREE</h3>
+            <p>Automotive gauges for precision, performance and driving control.</p>
+            <a href="#products">Explore products <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="brand-card">
+            <span class="brand-card-label">AFTERMARKET LED LIGHTS</span>
+            <h3>FP</h3>
+            <p>Aftermarket LED lighting solutions combining performance and style.</p>
+            <a href="#products">Explore products <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <small>Browse by category</small>
+          <h2>Explore Our Categories</h2>
+          <p>Find the automobile components you're looking for.</p>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-card" type="button" data-category="Engine">
+            <span class="category-icon" aria-hidden="true">⚙</span>
+            <h3>Engine Parts</h3><p>Browse category</p>
+          </button>
+          <button class="category-card" type="button" data-category="Brake">
+            <span class="category-icon" aria-hidden="true">◉</span>
+            <h3>Brake Parts</h3><p>Browse category</p>
+          </button>
+          <button class="category-card" type="button" data-category="Suspension">
+            <span class="category-icon" aria-hidden="true">↕</span>
+            <h3>Suspension</h3><p>Browse category</p>
+          </button>
+          <button class="category-card" type="button" data-category="Filters">
+            <span class="category-icon" aria-hidden="true">▤</span>
+            <h3>Filters</h3><p>Browse category</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <small>Our catalogue</small>
+          <h2>Explore Our Products</h2>
+          <p>Browse our product collection and send us your enquiries.</p>
+        </div>
+
+        <div class="catalogue-tools">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="productSearch" placeholder="Search products, brands or part numbers..." aria-label="Search products">
+          </label>
+          <div class="filters" id="productFilters">
+            <button class="filter-btn active" type="button" data-filter="All">All</button>
+            <button class="filter-btn" type="button" data-filter="Engine">Engine</button>
+            <button class="filter-btn" type="button" data-filter="Brake">Brake</button>
+            <button class="filter-btn" type="button" data-filter="Suspension">Suspension</button>
+            <button class="filter-btn" type="button" data-filter="Filters">Filters</button>
           </div>
-        </article>
+        </div>
 
+        <div class="product-grid" id="productGrid">
+          <div class="empty-state" id="noResults" style="display:block">
+            Products will appear here when they are available in the catalogue.
+          </div>
+        </div>
+        <p class="catalogue-status" id="catalogueStatus" aria-live="polite">Loading product catalogue...</p>
       </div>
+    </section>
 
-      <div class="no-results" id="noResults">
-        No matching products found. Try another search.
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="fp-logo.jpeg" alt="First Priority Auto Spare Parts logo">
+        </div>
+        <div class="about-copy">
+          <small>ABOUT FIRST PRIORITY</small>
+          <h2>Your Automotive Spare Parts Partner</h2>
+          <p>First Priority Auto Spare Parts Trading was launched and licensed in 2007 and is based in Dubai, United Arab Emirates.</p>
+          <p>We are the exclusive distributor of MICHIBA automotive lighting bulbs and VTHREE automotive gauges, as well as the manufacturer of FP aftermarket LED lights.</p>
+          <p>We support automotive workshops, transportation companies, automotive retailers and other business customers with product solutions and enquiries.</p>
+          <a href="#contact" class="primary-btn">Get in Touch <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div class="about-panel">FP</div>
-      <div class="about-copy">
-        <small>ABOUT FIRST PRIORITY</small>
-        <h2>Making Your Spare Parts Search Easier</h2>
-        <p>
-          Welcome to First Priority Auto Parts.
-          Explore our automobile spare parts catalogue
-          and contact our team for product information
-          and enquiries.
-        </p>
-        <a href="#contact" class="primary-btn">Get in Touch</a>
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <h2>Looking for a Spare Part?</h2>
+        <p>Contact First Priority Auto Spare Parts for product information, availability and business enquiries.</p>
+        <a href="mailto:info@fpautoparts.ae?subject=Product%20Enquiry" class="contact-btn">Send an Email Enquiry <span aria-hidden="true">→</span></a>
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <h2>Looking for a Spare Part?</h2>
-      <p>Contact First Priority Auto Parts for product enquiries.</p>
-      <a href="mailto:info@fpautoparts.ae" class="contact-btn">
-        Send an Email Enquiry →
-      </a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> First Priority Auto Parts. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> First Priority Auto Spare Parts. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#brands">Our Brands</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact Us</a>
+      </div>
     </div>
   </footer>
 
+  <!-- SITE INTERACTIONS -->
   <script>
-    // Mobile navigation
+    // Mobile navigation and accessible Products dropdown
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
+    const productsDropdown = document.getElementById("productsDropdown");
+    const dropdownToggle = productsDropdown.querySelector(".dropdown-toggle");
 
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    dropdownToggle.addEventListener("click", () => {
+      const isOpen = productsDropdown.classList.toggle("open");
+      dropdownToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
+        productsDropdown.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
       });
     });
 
-    // Product search and filters
-    const searchInput = document.getElementById("productSearch");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const productCards = document.querySelectorAll(".product-card");
-    const noResults = document.getElementById("noResults");
+    // Hero carousel: manual arrows, dots and automatic rotation
+    const slides = Array.from(document.querySelectorAll(".hero-slide"));
+    const dots = Array.from(document.querySelectorAll(".hero-dot"));
+    const prevButton = document.getElementById("heroPrev");
+    const nextButton = document.getElementById("heroNext");
+    const carousel = document.getElementById("heroCarousel");
+    let activeSlide = 0;
+    let carouselTimer;
 
-    let currentFilter = "All";
-
-    function filterProducts() {
-      const search = searchInput.value.toLowerCase();
-      let visibleCount = 0;
-
-      productCards.forEach(card => {
-        const category = card.dataset.category;
-        const text = card.textContent.toLowerCase();
-
-        const categoryMatch =
-          currentFilter === "All" || category === currentFilter;
-
-        const searchMatch = text.includes(search);
-        const show = categoryMatch && searchMatch;
-
-        card.style.display = show ? "block" : "none";
-
-        if (show) visibleCount++;
+    function showSlide(index) {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === activeSlide;
+        slide.classList.toggle("active", active);
+        slide.setAttribute("aria-hidden", String(!active));
       });
-
-      noResults.style.display = visibleCount === 0 ? "block" : "none";
+      dots.forEach((dot, i) => {
+        const active = i === activeSlide;
+        dot.classList.toggle("active", active);
+        if (active) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
     }
 
-    searchInput.addEventListener("input", filterProducts);
-
-    filterButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        currentFilter = button.dataset.filter;
-        filterProducts();
-      });
-    });
-
-    // Category shortcuts
-    document.querySelectorAll(".category-card").forEach(card => {
-      card.addEventListener("click", () => {
-        currentFilter = card.dataset.category;
-
-        filterButtons.forEach(button => {
-          button.classList.toggle(
-            "active",
-            button.dataset.filter === currentFilter
-          );
-        });
-
-        filterProducts();
-        document.getElementById("products").scrollIntoView();
-      });
-    });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-    // THREE-BRAND HERO CAROUSEL
-
-const heroSlides = document.querySelectorAll(".hero-slide");
-const heroDots = document.querySelectorAll(".hero-dot");
-const heroPrev = document.getElementById("heroPrev");
-const heroNext = document.getElementById("heroNext");
-const heroSlider = document.getElementById("heroSlider");
-
-let currentHeroSlide = 0;
-let heroTimer;
-
-const reducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
-
-function showHeroSlide(index) {
-
-  currentHeroSlide =
-    (index + heroSlides.length) % heroSlides.length;
-
-  heroSlides.forEach((slide, i) => {
-    slide.classList.toggle(
-      "active",
-      i === currentHeroSlide
-    );
-  });
-
-  heroDots.forEach((dot, i) => {
-    dot.classList.toggle(
-      "active",
-      i === currentHeroSlide
-    );
-
-    if (i === currentHeroSlide) {
-      dot.setAttribute("aria-current", "true");
-    } else {
-      dot.removeAttribute("aria-current");
+    function startCarousel() {
+      stopCarousel();
+      carouselTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
     }
-  });
-}
+    function stopCarousel() {
+      if (carouselTimer) window.clearInterval(carouselTimer);
+    }
 
-function nextHeroSlide() {
-  showHeroSlide(currentHeroSlide + 1);
-}
+    prevButton.addEventListener("click", () => { showSlide(activeSlide - 1); startCarousel(); });
+    nextButton.addEventListener("click", () => { showSlide(activeSlide + 1); startCarousel(); });
+    dots.forEach((dot, i) => dot.addEventListener("click", () => { showSlide(i); startCarousel(); }));
+    carousel.addEventListener("mouseenter", stopCarousel);
+    carousel.addEventListener("mouseleave", startCarousel);
+    carousel.addEventListener("focusin", stopCarousel);
+    carousel.addEventListener("focusout", startCarousel);
+    startCarousel();
 
-function previousHeroSlide() {
-  showHeroSlide(currentHeroSlide - 1);
-}
-
-function startHeroAutoplay() {
-  clearInterval(heroTimer);
-
-  if (!reducedMotion) {
-    heroTimer = setInterval(nextHeroSlide, 5000);
-  }
-}
-
-heroNext.addEventListener("click", () => {
-  nextHeroSlide();
-  startHeroAutoplay();
-});
-
-heroPrev.addEventListener("click", () => {
-  previousHeroSlide();
-  startHeroAutoplay();
-});
-
-heroDots.forEach(dot => {
-  dot.addEventListener("click", () => {
-    showHeroSlide(Number(dot.dataset.slide));
-    startHeroAutoplay();
-  });
-});
-
-// Pause when visitors hover over the banner
-heroSlider.addEventListener("mouseenter", () => {
-  clearInterval(heroTimer);
-});
-
-heroSlider.addEventListener("mouseleave", () => {
-  startHeroAutoplay();
-});
-
-// Pause while keyboard users interact with the banner
-heroSlider.addEventListener("focusin", () => {
-  clearInterval(heroTimer);
-});
-
-heroSlider.addEventListener("focusout", () => {
-  startHeroAutoplay();
-});
-
-startHeroAutoplay();
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-<script type="module">
-  import { createClient } from
-    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-  const SUPABASE_URL = 'https://jnuqizxawrdsipntvmfa.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_yi1cUBhXGUe9qaCaLIwo3w_OrGyQ2_M';
+  <!-- SUPABASE PRODUCT AND CATEGORY INTEGRATION -->
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-  const supabase = createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+    // Use the Supabase project URL and publishable (anon) key.
+    // Never put a Supabase service_role key in frontend code.
+    const SUPABASE_URL = "https://jnuqizxawrdsipntvmfa.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_yi1cUBhXGUe9qaCaLIwo3w_OrGyQ2_M";
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  async function testConnection() {
-    const { data, error } = await supabase
-      .from('products')
-      .select('id')
-      .limit(1);
+    const productGrid = document.getElementById("productGrid");
+    const noResults = document.getElementById("noResults");
+    const catalogueStatus = document.getElementById("catalogueStatus");
+    const searchInput = document.getElementById("productSearch");
+    const filterContainer = document.getElementById("productFilters");
+    const categoryGrid = document.getElementById("categoryGrid");
+    const navCategoryLinks = document.getElementById("navCategoryLinks");
 
-    if (error) {
-      console.error('Supabase error:', error.message);
-    } else {
-      console.log('Supabase connected successfully!', data);
+    let products = [];
+    let categories = [];
+    let activeFilter = "All";
+
+    const categoryIcons = ["⚙", "◉", "↕", "▤", "⌁", "🔧", "◇", "◈"];
+
+    function safeText(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[char]);
     }
-  }
 
-  testConnection();
-</script>
+    function getImageUrl(path) {
+      if (!path) return "";
+      const value = String(path).trim();
+      // Supports a full URL or a path relative to index.html.
+      // If your image_path stores a Supabase Storage object path, use its public
+      // Storage URL here after confirming your actual bucket name.
+      return value;
+    }
+
+    function renderCategories() {
+      if (!categories.length) return;
+
+      categoryGrid.innerHTML = categories.map((category, index) => `
+        <button class="category-card" type="button" data-category-id="${safeText(category.id)}" data-category-name="${safeText(category.name)}">
+          <span class="category-icon" aria-hidden="true">${categoryIcons[index % categoryIcons.length]}</span>
+          <h3>${safeText(category.name)}</h3>
+          <p>${safeText(category.description || "Browse category")}</p>
+        </button>
+      `).join("");
+
+      navCategoryLinks.innerHTML = `
+        <li><a href="#products" data-nav-filter="All">View all products</a></li>
+        ${categories.map(category => `
+          <li><a href="#products" data-nav-category="${safeText(category.id)}">${safeText(category.name)}</a></li>
+        `).join("")}
+      `;
+
+      categoryGrid.querySelectorAll(".category-card").forEach(card => {
+        card.addEventListener("click", () => {
+          activeFilter = card.dataset.categoryId;
+          searchInput.value = "";
+          updateFilterButtons();
+          renderProducts();
+          document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      navCategoryLinks.querySelectorAll("[data-nav-category]").forEach(link => {
+        link.addEventListener("click", () => {
+          activeFilter = link.dataset.navCategory;
+          searchInput.value = "";
+          updateFilterButtons();
+          renderProducts();
+          productsDropdown.classList.remove("open");
+        });
+      });
+      navCategoryLinks.querySelector("[data-nav-filter='All']").addEventListener("click", () => {
+        activeFilter = "All";
+        updateFilterButtons();
+        renderProducts();
+      });
+    }
+
+    function updateFilterButtons() {
+      filterContainer.querySelectorAll(".filter-btn").forEach(button => {
+        button.classList.toggle("active", button.dataset.filter === activeFilter);
+      });
+      categoryGrid.querySelectorAll(".category-card").forEach(card => {
+        card.classList.toggle("active", card.dataset.categoryId === activeFilter);
+      });
+    }
+
+    function renderProducts() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const filtered = products.filter(product => {
+        const categoryName = product.categories?.name || "";
+        const categoryMatch = activeFilter === "All" ||
+          String(product.category_id) === String(activeFilter) ||
+          categoryName.toLowerCase() === String(activeFilter).toLowerCase();
+        const searchable = [
+          product.name, product.description, product.part_number,
+          product.brand, categoryName
+        ].join(" ").toLowerCase();
+        return categoryMatch && searchable.includes(searchTerm);
+      });
+
+      if (!filtered.length) {
+        productGrid.innerHTML = "";
+        noResults.style.display = "block";
+        noResults.textContent = products.length
+          ? "No matching products found. Try another search or category."
+          : "No products are currently listed. Please contact our team for product enquiries.";
+        productGrid.appendChild(noResults);
+        return;
+      }
+
+      noResults.style.display = "none";
+      productGrid.innerHTML = filtered.map(product => {
+        const imageUrl = getImageUrl(product.image_path);
+        const categoryName = product.categories?.name || "Automotive Parts";
+        const enquirySubject = encodeURIComponent(`Product enquiry: ${product.name}${product.part_number ? " (" + product.part_number + ")" : ""}`);
+        const enquiryBody = encodeURIComponent(`Hello First Priority Auto Parts,\n\nI would like to enquire about:\nProduct: ${product.name}\nBrand: ${product.brand || "Not specified"}\nPart number: ${product.part_number || "Not specified"}\n\nPlease share availability and further details.\n\nThank you.`);
+        return `
+          <article class="product-card">
+            <div class="product-image">
+              ${imageUrl
+                ? `<img src="${safeText(imageUrl)}" alt="${safeText(product.name)}" loading="lazy" onerror="this.parentElement.textContent='⚙'">`
+                : `<span aria-hidden="true">⚙</span>`}
+            </div>
+            <div class="product-info">
+              <span class="product-category">${safeText(product.brand || categoryName)}</span>
+              <h3>${safeText(product.name)}</h3>
+              <p>${safeText(product.description || "Contact our team for product information.")}</p>
+              ${product.part_number ? `<div class="product-meta">Part No: ${safeText(product.part_number)}</div>` : ""}
+              <a class="enquiry-btn" href="mailto:info@fpautoparts.ae?subject=${enquirySubject}&body=${enquiryBody}">Enquire Now →</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    filterContainer.addEventListener("click", event => {
+      const button = event.target.closest(".filter-btn");
+      if (!button) return;
+      activeFilter = button.dataset.filter;
+      updateFilterButtons();
+      renderProducts();
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+    async function loadCatalogue() {
+      catalogueStatus.textContent = "Loading product catalogue...";
+      try {
+        const [categoryResult, productResult] = await Promise.all([
+          supabase.from("categories")
+            .select("id,name,slug,description,is_active,sort_order")
+            .eq("is_active", true)
+            .order("sort_order", { ascending: true }),
+          supabase.from("products")
+            .select("id,name,description,part_number,brand,category_id,image_path,price,is_active,categories(name)")
+            .eq("is_active", true)
+            .order("created_at", { ascending: false })
+        ]);
+
+        if (categoryResult.error) throw categoryResult.error;
+        if (productResult.error) throw productResult.error;
+
+        categories = categoryResult.data || [];
+        products = productResult.data || [];
+
+        renderCategories();
+        renderProducts();
+        catalogueStatus.textContent = `${products.length} product${products.length === 1 ? "" : "s"} available in the catalogue.`;
+      } catch (error) {
+        console.error("Supabase catalogue error:", error.message || error);
+        catalogueStatus.textContent = "We couldn't load the online catalogue right now. Please contact us for product enquiries.";
+        noResults.style.display = "block";
+        noResults.textContent = "The product catalogue is temporarily unavailable. Please contact our team for assistance.";
+      }
+    }
+
+    loadCatalogue();
+  </script>
 </body>
 </html>
