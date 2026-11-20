@@ -38,17 +38,18 @@ header {
 .header-container {
   max-width: 1250px;
   margin: auto;
-  padding: 15px 30px;
-  min-height: 90px;
+  padding: 8px 30px;
+  min-height: 75px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo img {
-  width: 340px;
+  width: 200px;
+  height: 58px;
   max-width: 100%;
-  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -109,24 +110,18 @@ nav a.active::after {
 
 .banner-container h1 {
   color: var(--navy);
-  font-size: 37px;
+  font-size: 34px;
   font-weight: 750;
-  display: flex;
-  align-items: center;
-  gap: 14px;
   margin-bottom: 3px;
+  display: block;
 }
 
 .banner-container h1::before {
-  content: "";
-  width: 10px;
-  height: 35px;
-  background: var(--blue);
-  transform: skew(-25deg);
+  display: none;
 }
 
 .banner-container p {
-  margin-left: 25px;
+  margin-left: 0;
   font-size: 15px;
   color: #647b88;
 }
@@ -192,11 +187,7 @@ nav a.active::after {
 }
 
 .glance-title::before {
-  content: "";
-  height: 24px;
-  width: 8px;
-  background: var(--blue);
-  transform: skew(-25deg);
+  display: none;
 }
 
 .glance-grid {
