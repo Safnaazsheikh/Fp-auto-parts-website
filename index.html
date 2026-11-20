@@ -133,40 +133,293 @@
       cursor: pointer;
       color: var(--dark-blue);
     }
+/* HERO BRAND CAROUSEL */
 
-    /* HERO */
 .hero {
-  background: linear-gradient(
-    115deg,
-    #015B8F 0%,
-    #006FA8 58%,
-    #00A0D0 100%
-  );
-  color: #FFFFFF;
-  padding: 95px 0;
-  overflow: hidden;
   position: relative;
+  background: #00314A;
+  color: #FFFFFF;
+  overflow: hidden;
+  padding: 0;
+  min-height: 440px;
 }
 
-.hero-content {
-  max-width: min(700px, 62%);
+.hero-slider {
   position: relative;
+  min-height: 440px;
+}
+
+.hero-slide {
+  display: none;
+  position: relative;
+  min-height: 440px;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    110deg,
+    #00314A 0%,
+    #015B8F 65%,
+    #007EAD 100%
+  );
+}
+
+.hero-slide.active {
+  display: flex;
+  animation: heroFade 0.7s ease;
+}
+
+@keyframes heroFade {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 31, 48, 0.97) 0%,
+    rgba(0, 49, 74, 0.88) 42%,
+    rgba(0, 49, 74, 0.15) 100%
+  );
   z-index: 1;
 }
 
-.hero::after {
-  content: "";
+.hero-slide-image {
   position: absolute;
-  right: max(5%, calc((100vw - 1180px) / 2));
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  width: min(1180px, 90%);
+  margin: auto;
+  padding: 75px 0;
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+}
+
+.hero-content-inner {
+  max-width: 570px;
+}
+
+.hero-brand-label {
+  display: inline-block;
+  color: #B5DEF4;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  color: #FFFFFF;
+  font-size: clamp(32px, 4.2vw, 54px);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.hero-content p {
+  color: #EAF7FC;
+  font-size: 17px;
+  max-width: 480px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #FFFFFF;
+  color: #015B8F;
+  padding: 14px 25px;
+  border-radius: 7px;
+  font-weight: 800;
+  transition: 0.25s;
+}
+
+.hero-btn:hover {
+  background: #B5DEF4;
+  transform: translateY(-2px);
+}
+
+/* CAROUSEL ARROWS */
+
+.hero-arrow {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(190px, 27vw, 330px);
-  aspect-ratio: 1;
-  background: #FFFFFF url("fp-logo.jpg")
-    center / contain no-repeat;
-  border-radius: 24px;
-  box-shadow: 0 18px 45px rgba(0, 49, 74, 0.22);
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 50%;
+  background: rgba(0,49,74,0.55);
+  color: #FFFFFF;
+  font-size: 25px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
 }
+
+.hero-arrow:hover {
+  background: #00A0D0;
+  border-color: #00A0D0;
+}
+
+.hero-arrow.prev {
+  left: 25px;
+}
+
+.hero-arrow.next {
+  right: 25px;
+}
+
+/* CAROUSEL DOTS */
+
+.hero-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: 0.25s;
+}
+
+.hero-dot.active {
+  width: 30px;
+  background: #FFFFFF;
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+  .hero,
+  .hero-slider,
+  .hero-slide {
+    min-height: 390px;
+  }
+
+  .hero-content {
+    width: 86%;
+    padding: 65px 0;
+  }
+
+  .hero-content-inner {
+    max-width: 500px;
+  }
+
+  .hero-arrow.prev {
+    left: 12px;
+  }
+
+  .hero-arrow.next {
+    right: 12px;
+  }
+
+  .hero-slide::before {
+    background: linear-gradient(
+      90deg,
+      rgba(0,31,48,0.97),
+      rgba(0,49,74,0.78) 65%,
+      rgba(0,49,74,0.25)
+    );
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .hero,
+  .hero-slider,
+  .hero-slide {
+    min-height: 490px;
+  }
+
+  .hero-slide-image {
+    object-position: 60% center;
+  }
+
+  .hero-slide::before {
+    background: linear-gradient(
+      90deg,
+      rgba(0,31,48,0.92),
+      rgba(0,49,74,0.76)
+    );
+  }
+
+  .hero-content {
+    width: 84%;
+    padding: 65px 0 85px;
+  }
+
+  .hero-content-inner {
+    max-width: 100%;
+  }
+
+  .hero-brand-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 8vw, 39px);
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    padding: 12px 19px;
+    font-size: 14px;
+  }
+
+  .hero-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .hero-arrow.prev {
+    left: 8px;
+  }
+
+  .hero-arrow.next {
+    right: 8px;
+  }
+
+  .hero-dots {
+    bottom: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide.active {
+    animation: none;
+  }
+}
+   
     /* TRUST STRIP */
 
     .trust-strip {
@@ -762,21 +1015,166 @@ footer {
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
+  <!-- HERO BRAND CAROUSEL -->
+<section class="hero" id="home">
+
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- SLIDE 1: MICHIBA -->
+    <div class="hero-slide active">
+      
+
+      <img
+        src="michiba_automotive_lighting_banner.jpeg"
+        alt="MICHIBA automotive lighting bulbs"
+        class="hero-slide-image"
+      >
+
       <div class="hero-content">
-        <div class="eyebrow">Welcome to First Priority</div>
-        <h1>Your Trusted Destination for Automobile Spare Parts</h1>
-        <p>
-          Explore our automobile spare parts catalogue.
-          Find the components you need and contact our team
-          for product enquiries.
-        </p>
-        <a href="#products" class="hero-btn">Explore Products →</a>
+        <div class="hero-content-inner">
+
+          <span class="hero-brand-label">
+            MICHIBA AUTOMOTIVE LIGHTING
+          </span>
+
+          <h1>
+            Brighter Vision.
+            Better Driving.
+          </h1>
+
+          <p>
+            Discover MICHIBA automotive lighting bulbs,
+            designed to deliver reliable illumination
+            and enhanced visibility.
+          </p>
+
+          <a href="#products" class="hero-btn">
+            Explore Products →
+          </a>
+
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- SLIDE 2: VTHREE -->
+    <div class="hero-slide">
+
+      <img
+        src="vthree_automotive_gauges_banner.jpeg"
+        alt="VTHREE automotive gauges"
+        class="hero-slide-image"
+      >
+
+      <div class="hero-content">
+        <div class="hero-content-inner">
+
+          <span class="hero-brand-label">
+            VTHREE AUTOMOTIVE GAUGES
+          </span>
+
+          <h1>
+            Precision in Every
+            Performance.
+          </h1>
+
+          <p>
+            Explore VTHREE automotive gauges,
+            bringing precision, performance
+            and control to your driving experience.
+          </p>
+
+          <a href="#products" class="hero-btn">
+            Explore Products →
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: FP LED LIGHTS -->
+    <div class="hero-slide">
+
+      <img
+        src="fp-led-banner.jpeg"
+        alt="FP aftermarket LED lights"
+        class="hero-slide-image"
+      >
+
+      <div class="hero-content">
+        <div class="hero-content-inner">
+
+          <span class="hero-brand-label">
+            FP AFTERMARKET LIGHTING
+          </span>
+
+          <h1>
+            Illuminate Every
+            Journey.
+          </h1>
+
+          <p>
+            Discover FP aftermarket LED lights,
+            combining advanced lighting solutions
+            with performance and style.
+          </p>
+
+          <a href="#products" class="hero-btn">
+            Explore Products →
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PREVIOUS ARROW -->
+    <button
+      type="button"
+      class="hero-arrow prev"
+      id="heroPrev"
+      aria-label="Previous banner"
+    >
+      &#10094;
+    </button>
+
+    <!-- NEXT ARROW -->
+    <button
+      type="button"
+      class="hero-arrow next"
+      id="heroNext"
+      aria-label="Next banner"
+    >
+      &#10095;
+    </button>
+
+    <!-- SLIDE INDICATORS -->
+    <div class="hero-dots">
+
+      <button
+        type="button"
+        class="hero-dot active"
+        data-slide="0"
+        aria-label="Show MICHIBA banner"
+        aria-current="true"
+      ></button>
+
+      <button
+        type="button"
+        class="hero-dot"
+        data-slide="1"
+        aria-label="Show VTHREE banner"
+      ></button>
+
+      <button
+        type="button"
+        class="hero-dot"
+        data-slide="2"
+        aria-label="Show FP LED banner"
+      ></button>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- TRUST STRIP -->
   <section class="trust-strip">
@@ -1012,6 +1410,99 @@ footer {
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+    // THREE-BRAND HERO CAROUSEL
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll(".hero-dot");
+const heroPrev = document.getElementById("heroPrev");
+const heroNext = document.getElementById("heroNext");
+const heroSlider = document.getElementById("heroSlider");
+
+let currentHeroSlide = 0;
+let heroTimer;
+
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+function showHeroSlide(index) {
+
+  currentHeroSlide =
+    (index + heroSlides.length) % heroSlides.length;
+
+  heroSlides.forEach((slide, i) => {
+    slide.classList.toggle(
+      "active",
+      i === currentHeroSlide
+    );
+  });
+
+  heroDots.forEach((dot, i) => {
+    dot.classList.toggle(
+      "active",
+      i === currentHeroSlide
+    );
+
+    if (i === currentHeroSlide) {
+      dot.setAttribute("aria-current", "true");
+    } else {
+      dot.removeAttribute("aria-current");
+    }
+  });
+}
+
+function nextHeroSlide() {
+  showHeroSlide(currentHeroSlide + 1);
+}
+
+function previousHeroSlide() {
+  showHeroSlide(currentHeroSlide - 1);
+}
+
+function startHeroAutoplay() {
+  clearInterval(heroTimer);
+
+  if (!reducedMotion) {
+    heroTimer = setInterval(nextHeroSlide, 5000);
+  }
+}
+
+heroNext.addEventListener("click", () => {
+  nextHeroSlide();
+  startHeroAutoplay();
+});
+
+heroPrev.addEventListener("click", () => {
+  previousHeroSlide();
+  startHeroAutoplay();
+});
+
+heroDots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    showHeroSlide(Number(dot.dataset.slide));
+    startHeroAutoplay();
+  });
+});
+
+// Pause when visitors hover over the banner
+heroSlider.addEventListener("mouseenter", () => {
+  clearInterval(heroTimer);
+});
+
+heroSlider.addEventListener("mouseleave", () => {
+  startHeroAutoplay();
+});
+
+// Pause while keyboard users interact with the banner
+heroSlider.addEventListener("focusin", () => {
+  clearInterval(heroTimer);
+});
+
+heroSlider.addEventListener("focusout", () => {
+  startHeroAutoplay();
+});
+
+startHeroAutoplay();
   </script>
 <script type="module">
   import { createClient } from
