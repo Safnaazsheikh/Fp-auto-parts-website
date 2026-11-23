@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact Us | First Priority Auto Spare Parts Trading LLC </title>
+<title>Contact Us | First Priority Auto Spare Parts Trading LLC</title>
 
 <style>
 :root {
   --blue: #269bc4;
-  --navy: #123d60;
+  --navy: #173d60;
   --text: #424e57;
   --light-blue: #eaf6fa;
-  --border: #dce8ed;
+  --border: #e4edf1;
 }
 
 * {
@@ -82,7 +82,7 @@ header {
   text-transform: uppercase;
   line-height: 1.5;
 }
-  
+
 nav {
   display: flex;
   align-items: center;
@@ -123,83 +123,77 @@ nav a.active::after {
   color: var(--navy);
 }
 
-/* PAGE BANNER */
+/* CONTACT INTRODUCTION */
 
-.contact-banner {
-  background: var(--light-blue);
-  padding: 32px 30px;
+.contact-intro {
+  background: #fff;
+  padding: 48px 30px 15px;
 }
 
-.banner-container {
+.contact-intro-container {
   max-width: 1150px;
   margin: auto;
 }
 
-.banner-container h1 {
+.contact-intro h1 {
   color: var(--navy);
-  font-size: 34px;
-  margin-bottom: 5px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.banner-container p {
-  color: #647b88;
+.heading-line {
+  width: 75px;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  color: #687780;
   font-size: 15px;
+  line-height: 1.9;
+  max-width: 750px;
 }
 
-/* CONTACT CONTENT */
+/* CONTACT INFORMATION */
 
 .contact-container {
   max-width: 1150px;
   margin: auto;
-  padding: 55px 30px 70px;
+  padding: 30px 30px 55px;
 }
 
-.section-heading {
-  color: var(--navy);
-  font-size: 30px;
-  margin-bottom: 12px;
-}
-
-.heading-line {
-  width: 70px;
-  height: 4px;
-  background: var(--blue);
-  border-radius: 3px;
-  margin-bottom: 18px;
-}
-
-.intro-text {
-  color: #68737a;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 35px;
-  max-width: 750px;
-}
-
-/* CONTACT CARDS */
+/* OPEN TWO-COLUMN LAYOUT */
 
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  column-gap: 65px;
+  row-gap: 0;
 }
 
 .contact-card {
-  border: 1px solid var(--border);
-  padding: 28px;
-  border-radius: 8px;
-  background: #fff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 30px 12px 32px 0;
   transition: 0.3s ease;
 }
 
-.contact-card:hover {
-  border-color: var(--blue);
-  box-shadow: 0 5px 18px rgba(18,61,96,0.07);
+.contact-card:hover .contact-icon {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
+/* ICONS */
+
 .contact-icon {
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--light-blue);
   display: flex;
@@ -207,28 +201,33 @@ nav a.active::after {
   justify-content: center;
   color: var(--blue);
   font-size: 22px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  transition: 0.3s ease;
 }
+
+/* CONTACT HEADINGS */
 
 .contact-card h3 {
   color: var(--navy);
   font-size: 19px;
-  margin-bottom: 12px;
+  font-weight: 700;
+  margin-bottom: 13px;
 }
 
-.contact-card p {
-  color: #66727a;
+/* CONTACT DETAILS */
+
+.contact-card p,
+.contact-card a {
+  color: #66747d;
   font-size: 14px;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .contact-card a {
-  color: #66727a;
   text-decoration: none;
   display: block;
-  font-size: 14px;
-  line-height: 2;
   overflow-wrap: anywhere;
+  transition: color 0.2s ease;
 }
 
 .contact-card a:hover {
@@ -238,23 +237,24 @@ nav a.active::after {
 /* BOTTOM MESSAGE */
 
 .contact-message {
-  margin-top: 35px;
-  padding: 28px;
-  background: var(--light-blue);
-  border-left: 4px solid var(--blue);
-  border-radius: 4px;
+  margin-top: 42px;
+  padding: 5px 0 5px 20px;
+  border-left: 3px solid var(--blue);
+  background: transparent;
+  border-radius: 0;
 }
 
 .contact-message h3 {
   color: var(--navy);
   font-size: 21px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .contact-message p {
-  color: #64727b;
+  color: #687780;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
+  max-width: 850px;
 }
 
 /* FOOTER */
@@ -267,9 +267,10 @@ footer {
   font-size: 12px;
 }
 
-/* MOBILE */
+/* TABLET */
 
 @media(max-width: 900px) {
+
   .logo-text strong {
     font-size: 18px;
   }
@@ -277,12 +278,23 @@ footer {
   nav {
     gap: 18px;
   }
+
+  .contact-grid {
+    column-gap: 35px;
+  }
 }
 
+/* MOBILE */
+
 @media(max-width: 650px) {
+
   .header-container {
     padding: 10px 18px;
     min-height: 75px;
+  }
+
+  .logo {
+    gap: 9px;
   }
 
   .logo img {
@@ -326,28 +338,41 @@ footer {
     padding: 12px 0;
   }
 
-  .contact-banner {
-    padding: 30px 22px;
+  .contact-intro {
+    padding: 35px 22px 10px;
   }
 
-  .banner-container h1 {
+  .contact-intro h1 {
     font-size: 29px;
   }
 
-  .contact-container {
-    padding: 38px 22px 50px;
+  .intro-text {
+    font-size: 14px;
   }
 
-  .section-heading {
-    font-size: 25px;
+  .contact-container {
+    padding: 15px 22px 45px;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
+    column-gap: 0;
   }
 
   .contact-card {
-    padding: 23px;
+    padding: 25px 0;
+  }
+
+  .contact-card h3 {
+    font-size: 18px;
+  }
+
+  .contact-message {
+    margin-top: 30px;
+  }
+
+  .contact-message h3 {
+    font-size: 19px;
   }
 }
 </style>
@@ -362,7 +387,6 @@ footer {
 
     <a href="index.html" class="logo">
 
-      <!-- Use the same logo image path as about.html -->
       <img src="fp-logo.jpeg"
            alt="First Priority FP Logo">
 
@@ -389,29 +413,36 @@ footer {
   </div>
 </header>
 
-<!-- PAGE BANNER -->
+<!-- CONTACT INTRODUCTION -->
 
-<section class="contact-banner">
-  <div class="banner-container">
+<section class="contact-intro">
+
+  <div class="contact-intro-container">
+
     <h1>Contact Us</h1>
+
+    <div class="heading-line"></div>
+
+    <p class="intro-text">
+      Have a question or looking for automotive electrical spare parts?
+      Get in touch with First Priority Auto Spare Parts Trading L.L.C.
+      Our team will be happy to assist you.
+    </p>
+
   </div>
+
 </section>
 
 <!-- CONTACT INFORMATION -->
 
 <main class="contact-container">
 
-  <p class="intro-text">
-    Have a question or looking for automotive electrical spare parts?
-    Get in touch with First Priority Auto Spare Parts Trading L.L.C.
-    Our team will be happy to assist you.
-  </p>
-
   <div class="contact-grid">
 
     <!-- LOCATION -->
 
     <div class="contact-card">
+
       <div class="contact-icon">⌖</div>
 
       <h3>Our Location</h3>
@@ -421,11 +452,13 @@ footer {
         Shop No. 37, Bin Tani Building,<br>
         Deira, Dubai - U.A.E.
       </p>
+
     </div>
 
     <!-- PHONE -->
 
     <div class="contact-card">
+
       <div class="contact-icon">☎</div>
 
       <h3>Phone Numbers</h3>
@@ -433,11 +466,13 @@ footer {
       <a href="tel:+97142225152">+971 4 2225152</a>
       <a href="tel:+971502566334">+971 50 2566334</a>
       <a href="tel:+971529201020">+971 52 9201020</a>
+
     </div>
 
     <!-- EMAIL -->
 
     <div class="contact-card">
+
       <div class="contact-icon">✉</div>
 
       <h3>Email Address</h3>
@@ -445,11 +480,13 @@ footer {
       <a href="mailto:firstpriority2@gmail.com">
         firstpriority2@gmail.com
       </a>
+
     </div>
 
     <!-- WEBSITE -->
 
     <div class="contact-card">
+
       <div class="contact-icon">◎</div>
 
       <h3>Website</h3>
@@ -459,11 +496,12 @@ footer {
          rel="noopener noreferrer">
         www.firstpriorityautoparts.com
       </a>
+
     </div>
 
   </div>
 
-  <!-- CONTACT MESSAGE -->
+  <!-- BOTTOM MESSAGE -->
 
   <section class="contact-message">
 
@@ -488,26 +526,37 @@ footer {
   All Rights Reserved.
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
 const menuToggle = document.getElementById("menuToggle");
 const navigation = document.getElementById("navigation");
 
 menuToggle.addEventListener("click", () => {
+
   const open = navigation.classList.toggle("show");
+
   menuToggle.setAttribute("aria-expanded", open);
   menuToggle.textContent = open ? "✕" : "☰";
+
 });
 
 navigation.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     navigation.classList.remove("show");
     menuToggle.textContent = "☰";
     menuToggle.setAttribute("aria-expanded", "false");
+
   });
+
 });
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
 </script>
 
 </body>
