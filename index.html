@@ -1702,7 +1702,7 @@ async function loadNavigationCategories() {
       ${categories.map(category => `
 
         <li>
-          <a href="/products?category=${encodeURIComponent(category.slug || category.id)}">
+          <a href="catalogue.html?category=${encodeURIComponent(category.slug || category.id)}">
             ${safeText(category.name)}
           </a>
         </li>
