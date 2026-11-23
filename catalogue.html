@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062747">
+<title>Product Catalogue | First Priority Auto Spare Parts</title>
+
+<style>
+:root {
+  --navy: #062747;
+  --blue: #079ac7;
+  --ink: #153247;
+  --border: #e2eaf0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--ink);
+  background: #f7fafc;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 5px 22px rgba(6,39,71,.05);
+}
+
+.navbar {
+  max-width: 1200px;
+  min-height: 88px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.brand-name {
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.brand-name span {
+  display: block;
+  color: var(--blue);
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #29485d;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.catalogue-section {
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  margin: 45px auto 65px;
+  min-height: 60vh;
+}
+
+.catalogue-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.catalogue-heading h1 {
+  color: var(--navy);
+  font-size: clamp(25px, 3vw, 36px);
+  margin-bottom: 8px;
+}
+
+.catalogue-image {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(6,39,71,.07);
+}
+
+.status {
+  text-align: center;
+  padding: 55px 15px;
+  color: #637786;
+  font-size: 14px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.site-footer {
+  background: #12344c;
+  color: #fff;
+  padding: 24px;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media(max-width:600px) {
+  .navbar {
+    min-height: 72px;
+    padding: 10px 16px;
+  }
+
+  .brand img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+  .brand-name span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .catalogue-section {
+    width: calc(100% - 24px);
+    margin: 28px auto 40px;
+  }
+
+  .catalogue-image {
+    border-radius: 7px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="navbar">
+
+    <a href="index.html" class="brand">
+      <img src="fp-logo.jpeg" alt="First Priority Logo">
+
+      <div class="brand-name">
+        FIRST PRIORITY
+        <span>AUTO SPARE PARTS TRADING LLC</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="catalogue-section">
+
+  <a href="index.html" class="back-link">
+    ← Back to Home
+  </a>
+
+  <div id="catalogueContent">
+    <p class="status">Loading catalogue...</p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span>
+  First Priority Auto Spare Parts Trading LLC.
+  All rights reserved.
+</footer>
+
+<script type="module">
+
+import { createClient }
+from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+/* SUPABASE CONNECTION */
+
+const SUPABASE_URL =
+"https://jnuqizxawrdsipntvmfa.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_yi1cUBhXGUe9qaCaLIwo3w_OrGyQ2_M";
+
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const content =
+document.getElementById("catalogueContent");
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+/* GET CATEGORY FROM URL */
+
+async function loadCatalogue() {
+
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
+  const slug = params.get("category");
+
+  if (!slug) {
+    content.innerHTML =
+      '<p class="status">No category selected.</p>';
+    return;
+  }
+
+  try {
+
+    /* GET CATEGORY DETAILS */
+
+    const { data: category, error } = await supabase
+      .from("categories")
+      .select("name,slug")
+      .eq("slug", slug)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (error) throw error;
+
+    if (!category) {
+      throw new Error("Category not found.");
+    }
+
+    /* IMAGE NAME MATCHES CATEGORY SLUG */
+
+    const imagePath = `${category.slug}.png`;
+
+    const { data: imageData } = supabase
+      .storage
+      .from("product-images")
+      .getPublicUrl(imagePath);
+
+    const imageUrl = imageData.publicUrl;
+
+    /* DISPLAY CATALOGUE */
+
+    content.innerHTML = `
+
+      <div class="catalogue-heading">
+        <h1>${category.name}</h1>
+      </div>
+
+      <img
+        class="catalogue-image"
+        id="categoryImage"
+        src="${imageUrl}"
+        alt="${category.name} catalogue"
+      >
+
+    `;
+
+    /* HANDLE MISSING IMAGE */
+
+    document.getElementById("categoryImage")
+      .addEventListener("error", () => {
+
+        content.innerHTML = `
+          <p class="status">
+            Catalogue image not found for
+            ${category.name}.
+            Please check the image filename in Supabase Storage.
+          </p>
+        `;
+
+      });
+
+    document.title =
+      `${category.name} Catalogue | First Priority`;
+
+  } catch (error) {
+
+    console.error("Catalogue error:", error);
+
+    content.innerHTML = `
+      <p class="status">
+        ${error.message || "Unable to load catalogue."}
+      </p>
+    `;
+
+  }
+
+}
+
+loadCatalogue();
+
+</script>
+
+</body>
+</html>
