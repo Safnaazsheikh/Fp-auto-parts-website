@@ -363,6 +363,19 @@ button {
   mix-blend-mode: lighten;
   transform: translateY(-25px);
 }
+  /* Keep EPINA DENKI and TOUCH RELAY logos visible */
+
+.hero-slide:nth-of-type(4) .hero-media::before,
+.hero-slide:nth-of-type(6) .hero-media::before {
+    display: none;
+}
+
+.hero-slide:nth-of-type(4) .hero-media img,
+.hero-slide:nth-of-type(6) .hero-media img {
+    mix-blend-mode: normal;
+    object-fit: contain;
+    transform: none;
+}
 /* Adjust VEETHREE banner position only */
 .hero-slide:nth-child(2) .hero-media img {
   transform: translateY(20px);
