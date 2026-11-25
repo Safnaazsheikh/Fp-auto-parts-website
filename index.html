@@ -466,8 +466,8 @@ button {
 
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .brand-card {
@@ -975,6 +975,11 @@ button {
   }
 }
 
+  @media (max-width: 480px) {
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 380px) {
   .container {
     width: calc(100% - 28px);
