@@ -197,13 +197,12 @@ button {
   background: var(--pale-blue);
   color: var(--blue);
 }
-  /* ================= NESTED PRODUCT SUBMENUS ================= */
+  /* ================= PRODUCT SUBMENUS ================= */
 
 .dropdown-menu > li {
   position: relative;
 }
 
-.dropdown-menu a,
 .dropdown-menu .submenu-toggle {
   display: flex;
   align-items: center;
@@ -214,23 +213,29 @@ button {
   border-radius: 7px;
   background: transparent;
   color: var(--ink);
+  font: inherit;
   font-size: 13px;
   font-weight: 650;
   text-align: left;
   cursor: pointer;
 }
 
-.dropdown-menu a:hover,
 .dropdown-menu .submenu-toggle:hover {
   background: var(--pale-blue);
   color: var(--blue);
+}
+
+.submenu-arrow {
+  margin-left: 12px;
+  font-size: 16px;
+  color: var(--muted);
 }
 
 .submenu-menu {
   position: absolute;
   top: -3px;
   left: calc(100% + 8px);
-  min-width: 205px;
+  min-width: 245px;
   padding: 9px;
   list-style: none;
   background: #fff;
@@ -240,9 +245,9 @@ button {
   box-shadow: var(--shadow);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(6px);
+  transform: translateX(7px);
   transition: .2s ease;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .has-submenu:hover > .submenu-menu,
@@ -253,21 +258,18 @@ button {
   transform: translateX(0);
 }
 
-.submenu-arrow {
-  margin-left: 15px;
-  color: var(--muted);
-  font-size: 15px;
+.submenu-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 7px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
 }
 
-.menu-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--navy);
-  font-size: 23px;
+.submenu-menu a:hover {
+  background: var(--pale-blue);
+  color: var(--blue);
 }
 
 /* ================= HERO BANNER ================= */
@@ -902,7 +904,7 @@ button {
   display: block;
 }
 
-/* Mobile nested submenu */
+/* MOBILE PRODUCT SUBMENUS */
 
 .submenu-menu {
   position: static;
@@ -927,7 +929,7 @@ button {
 }
 
 .submenu-menu a {
-  padding: 9px 12px;
+  padding: 10px 12px;
   font-size: 12px;
 }
 
@@ -1900,221 +1902,179 @@ document.getElementById("currentYear").textContent =
 
 <!-- ================= SUPABASE CATEGORY NAVIGATION ================= -->
 
-<script type="module">
+<script>
 
-import { createClient }
-  from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+/* ================= PRODUCT MENU CONFIGURATION ================= */
 
-/* SUPABASE CONNECTION */
+const productMenu = [
 
-const SUPABASE_URL =
-  "https://jnuqizxawrdsipntvmfa.supabase.co";
+  {
+    name: "Bulb",
+    items: [
+      ["Headlight Bulb", "headlight-bulb.png"],
+      ["Tail Light Bulb", "tail-light-bulb.png"],
+      ["Dashboard Bulb", "dashboard-bulb.png"]
+    ]
+  },
 
-const SUPABASE_KEY =
-  "sb_publishable_yi1cUBhXGUe9qaCaLIwo3w_OrGyQ2_M";
+  {
+    name: "Switch",
+    items: [
+      ["Epina Ignition Switch (Made in Thailand)", "epina-ignition-switch-made-in-thailand.png"],
+      ["Battery Cut Off Switches", "battery-cut-off-switches.png"]
+    ]
+  },
 
-const supabase = createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+  {
+    name: "Touch Relay",
+    items: [
+      ["TH Relay", "th-relay.png"],
+      ["KRY", "kry.png"],
+      ["MICHIBA", "michiba.png"]
+    ]
+  },
 
-/* CATEGORY NAVIGATION */
+  {
+    name: "EXP – Automotive Switches",
+    items: [
+      ["Stop Switch", "stop-switch.png"],
+      ["Break Switch", "break-switch.png"],
+      ["Temperature Switch", "temperature-switch.png"],
+      ["Oil Indicator Switch", "oil-indicator-switch.png"]
+    ]
+  },
+
+  {
+    name: "Veethree",
+    items: [
+      ["Fuel Sender", "fuel-sender.png"],
+      ["Gauge", "gauge.png"],
+      ["Temperature Senders", "temperature-senders.png"],
+      ["Oil Senders", "oil-senders.png"]
+    ]
+  },
+
+  {
+    name: "Horns",
+    items: [
+      ["All Horns", "all-horns.png"]
+    ]
+  },
+
+  {
+    name: "Tail Lights",
+    items: [
+      ["Machinery & Trucks", "machinery-trucks.png"],
+      ["Side Lights", "side-lights.png"]
+    ]
+  },
+
+  {
+    name: "Fog LED Lights",
+    items: [
+      ["FP LED Lights", "fp-led-lights.png"]
+    ]
+  }
+
+];
+
+/* ================= GENERATE PRODUCT MENU ================= */
 
 const navCategoryLinks =
   document.getElementById("navCategoryLinks");
 
-/*
-  BRAND OPTIONS FOR EACH CATEGORY
+function createProductMenu() {
 
-  The brand values must match the brand names
-  stored in your Supabase products table.
-*/
+  navCategoryLinks.innerHTML = productMenu.map(group => `
 
-const submenuBrands = {
+    <li class="has-submenu">
 
-  "bulb": [
-    { label: "Michiba Bulbs", brand: "Michiba" },
-    { label: "FP Bulbs", brand: "FP" }
-  ],
+      <button
+        type="button"
+        class="submenu-toggle"
+        aria-expanded="false">
 
-  "switch": [
-    { label: "Michiba Switches", brand: "Michiba" },
-    { label: "FP Switches", brand: "FP" },
-    { label: "EXP Switches", brand: "EXP" },
-    { label: "Epina Denki Switches", brand: "Epina Denki" }
-  ]
+        ${group.name.replace(/[&<>"']/g, char => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        })[char])}
 
-};
+        <span class="submenu-arrow" aria-hidden="true">›</span>
 
-/* SAFE TEXT OUTPUT */
+      </button>
 
-function safeText(value) {
+      <ul class="submenu-menu">
 
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-
-}
-
-/* GENERATE CATEGORY URL */
-
-function categoryUrl(category, brand = "") {
-
-  const params = new URLSearchParams();
-
-  params.set(
-    "category",
-    category.slug || category.id
-  );
-
-  if (brand) {
-    params.set("brand", brand);
-  }
-
-  return catalogue.html?${params.toString()};
-
-}
-
-/* LOAD ACTIVE CATEGORIES */
-
-async function loadNavigationCategories() {
-
-  try {
-
-    const { data, error } = await supabase
-      .from("categories")
-      .select("id,name,slug,is_active,sort_order")
-      .eq("is_active", true)
-      .order("sort_order", { ascending: true });
-
-    if (error) {
-      throw error;
-    }
-
-    const categories = data || [];
-
-    navCategoryLinks.innerHTML = `
-
-      ${categories.map(category => {
-
-        const categoryKey =
-          String(category.name || "").trim().toLowerCase();
-
-        const brands = submenuBrands[categoryKey];
-
-        /* CATEGORY WITH SUBMENU */
-
-        if (brands && brands.length) {
-
-          return `
-
-            <li class="has-submenu">
-
-              <button
-                type="button"
-                class="submenu-toggle"
-                aria-expanded="false">
-
-                ${safeText(category.name)}
-
-                <span class="submenu-arrow"
-                      aria-hidden="true">›</span>
-
-              </button>
-
-              <ul class="submenu-menu">
-
-                ${brands.map(item => `
-
-                  <li>
-
-                    <a href="${categoryUrl(category, item.brand)}">
-
-                      ${safeText(item.label)}
-
-                    </a>
-
-                  </li>
-
-                `).join("")}
-
-              </ul>
-
-            </li>
-
-          `;
-
-        }
-
-        /* NORMAL CATEGORY WITHOUT SUBMENU */
-
-        return `
+        ${group.items.map(item => `
 
           <li>
-
-            <a href="${categoryUrl(category)}">
-
-              ${safeText(category.name)}
-
+            <a href="catalogue.html?image=${encodeURIComponent(item[1])}&title=${encodeURIComponent(item[0])}">
+              ${item[0]}
             </a>
-
           </li>
 
-        `;
+        `).join("")}
 
-      }).join("")}
+      </ul>
 
-      <li>
-        <a href="/products">View all products</a>
-      </li>
+    </li>
 
-    `;
+  `).join("") + `
 
-  } catch (error) {
+    <li>
+      <a href="catalogue.html">View all products</a>
+    </li>
 
-    console.error(
-      "Category navigation error:",
-      error.message || error
-    );
-
-    navCategoryLinks.innerHTML = `
-
-      <li>
-        <a href="/products">View all products</a>
-      </li>
-
-    `;
-
-  }
+  `;
 
 }
 
-/* MOBILE SUBMENU TOGGLE */
+/* ================= MOBILE SUBMENU TOGGLE ================= */
 
 navCategoryLinks.addEventListener("click", event => {
 
   const toggle = event.target.closest(".submenu-toggle");
 
-  if (!toggle) return;
+  if (toggle) {
 
-  const parent = toggle.closest(".has-submenu");
+    const parent = toggle.closest(".has-submenu");
 
-  const isOpen = parent.classList.toggle("submenu-open");
+    const isOpen = parent.classList.toggle("submenu-open");
 
-  toggle.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
+    toggle.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    return;
+  }
+
+  const link = event.target.closest("a");
+
+  if (link) {
+
+    navCategoryLinks
+      .querySelectorAll(".submenu-open")
+      .forEach(item => item.classList.remove("submenu-open"));
+
+    productsDropdown.classList.remove("open");
+    navLinks.classList.remove("open");
+
+    dropdownToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuToggle.textContent = "☰";
+
+  }
 
 });
 
-/* INITIALISE */
+/* INITIALISE PRODUCT MENU */
 
-loadNavigationCategories();
+createProductMenu();
 
 </script>
 
