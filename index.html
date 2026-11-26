@@ -176,9 +176,9 @@ button {
   transition: .2s ease;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
-.dropdown.open .dropdown-menu {
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu,
+.dropdown.open > .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -196,6 +196,67 @@ button {
 .dropdown-menu a:hover {
   background: var(--pale-blue);
   color: var(--blue);
+}
+  /* ================= NESTED PRODUCT SUBMENUS ================= */
+
+.dropdown-menu > li {
+  position: relative;
+}
+
+.dropdown-menu a,
+.dropdown-menu .submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu .submenu-toggle:hover {
+  background: var(--pale-blue);
+  color: var(--blue);
+}
+
+.submenu-menu {
+  position: absolute;
+  top: -3px;
+  left: calc(100% + 8px);
+  min-width: 205px;
+  padding: 9px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--blue);
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(6px);
+  transition: .2s ease;
+  z-index: 1001;
+}
+
+.has-submenu:hover > .submenu-menu,
+.has-submenu:focus-within > .submenu-menu,
+.has-submenu.submenu-open > .submenu-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.submenu-arrow {
+  margin-left: 15px;
+  color: var(--muted);
+  font-size: 15px;
 }
 
 .menu-toggle {
@@ -837,9 +898,38 @@ button {
     transform: none;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
+  .dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+/* Mobile nested submenu */
+
+.submenu-menu {
+  position: static;
+  display: none;
+  min-width: 0;
+  margin: 3px 0 5px 12px;
+  padding: 4px;
+  border: 0;
+  border-left: 2px solid var(--blue);
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.has-submenu.submenu-open > .submenu-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.submenu-menu a {
+  padding: 9px 12px;
+  font-size: 12px;
+}
 
   .hero-carousel {
     min-height: 0;
@@ -1833,6 +1923,29 @@ const supabase = createClient(
 const navCategoryLinks =
   document.getElementById("navCategoryLinks");
 
+/*
+  BRAND OPTIONS FOR EACH CATEGORY
+
+  The brand values must match the brand names
+  stored in your Supabase products table.
+*/
+
+const submenuBrands = {
+
+  "bulb": [
+    { label: "Michiba Bulbs", brand: "Michiba" },
+    { label: "FP Bulbs", brand: "FP" }
+  ],
+
+  "switch": [
+    { label: "Michiba Switches", brand: "Michiba" },
+    { label: "FP Switches", brand: "FP" },
+    { label: "EXP Switches", brand: "EXP" },
+    { label: "Epina Denki Switches", brand: "Epina Denki" }
+  ]
+
+};
+
 /* SAFE TEXT OUTPUT */
 
 function safeText(value) {
@@ -1844,6 +1957,25 @@ function safeText(value) {
     '"': "&quot;",
     "'": "&#39;"
   })[char]);
+
+}
+
+/* GENERATE CATEGORY URL */
+
+function categoryUrl(category, brand = "") {
+
+  const params = new URLSearchParams();
+
+  params.set(
+    "category",
+    category.slug || category.id
+  );
+
+  if (brand) {
+    params.set("brand", brand);
+  }
+
+  return catalogue.html?${params.toString()};
 
 }
 
@@ -1867,15 +1999,78 @@ async function loadNavigationCategories() {
 
     navCategoryLinks.innerHTML = `
 
-      ${categories.map(category => `
+      ${categories.map(category => {
 
-        <li>
-          <a href="catalogue.html?category=${encodeURIComponent(category.slug || category.id)}">
-            ${safeText(category.name)}
-          </a>
-        </li>
+        const categoryKey =
+          String(category.name || "").trim().toLowerCase();
 
-      `).join("")}
+        const brands = submenuBrands[categoryKey];
+
+        /* CATEGORY WITH SUBMENU */
+
+        if (brands && brands.length) {
+
+          return `
+
+            <li class="has-submenu">
+
+              <button
+                type="button"
+                class="submenu-toggle"
+                aria-expanded="false">
+
+                ${safeText(category.name)}
+
+                <span class="submenu-arrow"
+                      aria-hidden="true">›</span>
+
+              </button>
+
+              <ul class="submenu-menu">
+
+                ${brands.map(item => `
+
+                  <li>
+
+                    <a href="${categoryUrl(category, item.brand)}">
+
+                      ${safeText(item.label)}
+
+                    </a>
+
+                  </li>
+
+                `).join("")}
+
+              </ul>
+
+            </li>
+
+          `;
+
+        }
+
+        /* NORMAL CATEGORY WITHOUT SUBMENU */
+
+        return `
+
+          <li>
+
+            <a href="${categoryUrl(category)}">
+
+              ${safeText(category.name)}
+
+            </a>
+
+          </li>
+
+        `;
+
+      }).join("")}
+
+      <li>
+        <a href="/products">View all products</a>
+      </li>
 
     `;
 
@@ -1889,9 +2084,7 @@ async function loadNavigationCategories() {
     navCategoryLinks.innerHTML = `
 
       <li>
-        <a href="/products">
-          View all products
-        </a>
+        <a href="/products">View all products</a>
       </li>
 
     `;
@@ -1899,6 +2092,25 @@ async function loadNavigationCategories() {
   }
 
 }
+
+/* MOBILE SUBMENU TOGGLE */
+
+navCategoryLinks.addEventListener("click", event => {
+
+  const toggle = event.target.closest(".submenu-toggle");
+
+  if (!toggle) return;
+
+  const parent = toggle.closest(".has-submenu");
+
+  const isOpen = parent.classList.toggle("submenu-open");
+
+  toggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+});
 
 /* INITIALISE */
 
