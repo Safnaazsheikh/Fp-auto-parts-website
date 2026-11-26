@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#062747">
-
 <meta name="description"
-content="Explore automotive spare parts from First Priority Auto Spare Parts Trading L.L.C, Dubai.">
-
+content="Explore automotive spare parts catalogues from First Priority Auto Spare Parts Trading L.L.C, Dubai.">
 <title>Product Catalogue | First Priority Auto Spare Parts</title>
-
 <style>
-
 :root {
   --navy:#062747;
-  --navy-deep:#031a31;
   --blue:#079ac7;
-  --blue-bright:#16b6e5;
-  --pale-blue:#eaf7fc;
-  --ink:#153247;
-  --muted:#637786;
   --border:#e2eaf0;
-  --surface:#f4f8fb;
+  --ink:#153247;
   --white:#fff;
-  --shadow:0 12px 35px rgba(6,39,71,.08);
 }
-
 * {
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
-
 body {
   font-family:Inter,Arial,Helvetica,sans-serif;
   color:var(--ink);
@@ -40,18 +27,11 @@ body {
   min-height:100vh;
   line-height:1.6;
 }
-
 a {
   color:inherit;
   text-decoration:none;
 }
-
-button {
-  font:inherit;
-}
-
 /* ================= HEADER ================= */
-
 .site-header {
   position:sticky;
   top:0;
@@ -60,7 +40,6 @@ button {
   border-bottom:1px solid var(--border);
   box-shadow:0 5px 22px rgba(6,39,71,.05);
 }
-
 .navbar {
   max-width:1200px;
   min-height:88px;
@@ -71,26 +50,22 @@ button {
   align-items:center;
   gap:20px;
 }
-
 .brand {
   display:flex;
   align-items:center;
   gap:12px;
 }
-
 .brand img {
   width:58px;
   height:58px;
   object-fit:contain;
 }
-
 .brand-name {
   color:var(--navy);
   font-size:16px;
   font-weight:850;
   line-height:1.2;
 }
-
 .brand-name span {
   display:block;
   color:var(--blue);
@@ -98,7 +73,6 @@ button {
   letter-spacing:1.7px;
   margin-top:5px;
 }
-
 .nav-links {
   display:flex;
   align-items:center;
@@ -107,193 +81,74 @@ button {
   font-weight:700;
   color:#29485d;
 }
-
 .nav-links a:hover {
   color:var(--blue);
 }
-
-/* ================= MAIN CONTENT ================= */
-
+/* ================= CATALOGUE PAGE ================= */
 .catalogue-section {
-  max-width:1200px;
   width:calc(100% - 48px);
-  margin:45px auto 65px;
-  min-height:60vh;
+  max-width:1400px;
+  min-height:65vh;
+  margin:35px auto 65px;
 }
-
 .back-link {
   display:inline-flex;
   align-items:center;
   gap:8px;
-  margin-bottom:25px;
+  margin-bottom:24px;
   color:var(--blue);
   font-size:13px;
   font-weight:750;
 }
-
 .back-link:hover {
   color:var(--navy);
 }
-
-/* ================= HEADING ================= */
-
+/* ================= CENTRED HEADING ================= */
 .catalogue-heading {
-  margin-bottom:32px;
+  width:100%;
+  text-align:center;
+  margin:0 auto 25px;
 }
-
-.catalogue-heading small {
-  display:block;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:850;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:7px;
-}
-
 .catalogue-heading h1 {
   color:var(--navy);
-  font-size:clamp(26px,3vw,38px);
-  line-height:1.2;
-}
-
-.catalogue-heading p {
-  margin-top:9px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* ================= PRODUCT GRID ================= */
-
-.product-grid {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:22px;
-}
-
-/* ================= PRODUCT CARD ================= */
-
-.product-card {
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  box-shadow:0 5px 20px rgba(6,39,71,.035);
-  transition:transform .25s ease,box-shadow .25s ease;
-}
-
-.product-card:hover {
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-}
-
-.product-image-wrapper {
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:225px;
-  padding:18px;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-}
-
-.product-image {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.image-placeholder {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-.image-placeholder span {
-  font-size:35px;
-  color:#b8c9d4;
-}
-
-.product-details {
-  display:flex;
-  flex-direction:column;
-  flex:1;
-  padding:18px;
-}
-
-.product-brand {
-  display:inline-block;
-  width:fit-content;
-  margin-bottom:9px;
-  padding:5px 10px;
-  border-radius:5px;
-  background:var(--pale-blue);
-  color:var(--blue);
-  font-size:10px;
+  font-size:clamp(27px,4vw,42px);
   font-weight:850;
-  letter-spacing:.7px;
+  line-height:1.2;
+  letter-spacing:.5px;
   text-transform:uppercase;
 }
-
-.product-name {
-  margin-bottom:8px;
-  color:var(--navy);
-  font-size:16px;
-  font-weight:800;
-  line-height:1.4;
-  overflow-wrap:anywhere;
+/* ================= LARGE CATALOGUE IMAGE ================= */
+.catalogue-image-container {
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
 }
-
-.product-description {
-  margin-bottom:12px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.7;
+.catalogue-image {
+  display:block;
+  width:100%;
+  max-width:1200px;
+  max-height:78vh;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
 }
-
-.product-part {
-  margin-top:auto;
-  padding-top:12px;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-  font-size:11px;
-}
-
-.product-part strong {
-  color:var(--ink);
-}
-
 /* ================= LOADING / EMPTY STATES ================= */
-
 .status {
   text-align:center;
-  padding:70px 20px;
-  color:var(--muted);
+  padding:65px 20px;
+  color:#637786;
   font-size:14px;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:12px;
 }
-
 .status-icon {
   display:block;
   margin-bottom:12px;
-  font-size:35px;
+  font-size:32px;
 }
-
 .error-message {
   color:#b42318;
-  background:#fff5f5;
-  border:1px solid #f2cccc;
 }
-
 .retry-button {
   display:inline-block;
   margin-top:18px;
@@ -306,13 +161,10 @@ button {
   font-weight:750;
   cursor:pointer;
 }
-
 .retry-button:hover {
   background:var(--blue);
 }
-
 /* ================= FOOTER ================= */
-
 .site-footer {
   background:#12344c;
   color:#fff;
@@ -320,432 +172,143 @@ button {
   text-align:center;
   font-size:12px;
 }
-
 /* ================= TABLET ================= */
-
-@media(max-width:1000px) {
-  .product-grid {
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:17px;
+@media(max-width:900px) {
+  .catalogue-image {
+    max-height:75vh;
   }
 }
-
 /* ================= MOBILE ================= */
-
 @media(max-width:650px) {
-
   .navbar {
     min-height:72px;
     padding:10px 16px;
   }
-
   .brand img {
     width:45px;
     height:45px;
   }
-
   .brand-name {
     font-size:12px;
   }
-
   .brand-name span {
     font-size:7px;
     letter-spacing:1px;
   }
-
   .nav-links {
     gap:12px;
     font-size:11px;
   }
-
   .catalogue-section {
-    width:calc(100% - 28px);
-    margin:28px auto 40px;
+    width:calc(100% - 24px);
+    margin:27px auto 40px;
   }
-
+  .back-link {
+    margin-bottom:22px;
+  }
   .catalogue-heading {
-    margin-bottom:23px;
+    margin-bottom:20px;
   }
-
-  .catalogue-heading p {
-    font-size:12px;
+  .catalogue-heading h1 {
+    font-size:27px;
   }
-
-  .product-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
+  .catalogue-image {
+    width:100%;
+    max-height:none;
+    height:auto;
   }
-
-  .product-image-wrapper {
-    height:165px;
-    padding:12px;
-  }
-
-  .product-details {
-    padding:13px;
-  }
-
-  .product-name {
-    font-size:13px;
-  }
-
-  .product-description {
-    font-size:11px;
-  }
-
-  .product-brand {
-    font-size:9px;
-    padding:4px 7px;
-  }
-
-  .product-part {
-    font-size:10px;
-  }
-
 }
-
-@media(max-width:360px) {
-
-  .product-grid {
-    grid-template-columns:1fr;
-  }
-
-  .product-image-wrapper {
-    height:220px;
-  }
-
-}
-
 </style>
 </head>
-
 <body>
-
 <!-- ================= HEADER ================= -->
-
 <header class="site-header">
-
   <div class="navbar">
-
     <a href="index.html" class="brand">
-
       <img src="fp-logo.jpeg"
            alt="First Priority Logo">
-
       <div class="brand-name">
-
         FIRST PRIORITY
-
         <span>AUTO SPARE PARTS TRADING L.L.C</span>
-
       </div>
-
     </a>
-
     <nav class="nav-links">
-
       <a href="index.html">Home</a>
-
       <a href="about.html">About</a>
-
       <a href="contact.html">Contact</a>
-
     </nav>
-
   </div>
-
 </header>
-
 <!-- ================= CATALOGUE ================= -->
-
 <main class="catalogue-section">
-
   <a href="index.html" class="back-link">
     ← Back to Home
   </a>
-
   <div id="catalogueContent">
-
     <div class="status">
       <span class="status-icon">⏳</span>
-      Loading products...
+      Loading catalogue...
     </div>
-
   </div>
-
 </main>
-
 <!-- ================= FOOTER ================= -->
-
 <footer class="site-footer">
-
-  ©️ <span id="year"></span>
-
+  © <span id="year"></span>
   First Priority Auto Spare Parts Trading LLC.
-
   All rights reserved.
-
 </footer>
-
-
 <!-- ================= SUPABASE ================= -->
-
 <script type="module">
-
 import { createClient }
 from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-
 /* ================= SUPABASE CONNECTION ================= */
-
 const SUPABASE_URL =
 "https://jnuqizxawrdsipntvmfa.supabase.co";
-
 const SUPABASE_KEY =
 "sb_publishable_yi1cUBhXGUe9qaCaLIwo3w_OrGyQ2_M";
-
 const supabase = createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
-
-
 /* ================= ELEMENTS ================= */
-
 const content =
 document.getElementById("catalogueContent");
-
 document.getElementById("year").textContent =
 new Date().getFullYear();
-
-
-/* ================= HELPERS ================= */
-
+/* ================= STATUS ================= */
 function showStatus(message, type = "") {
-
   content.replaceChildren();
-
   const box = document.createElement("div");
-
   box.className = "status " + type;
-
   box.textContent = message;
-
   content.appendChild(box);
-
 }
-
-function showLoading() {
-
-  content.innerHTML = `
-    <div class="status">
-      <span class="status-icon">⏳</span>
-      Loading products...
-    </div>
-  `;
-
-}
-
-
 /* ================= IMAGE URL ================= */
-
-/*
-  Product images are stored in the Supabase
-  Storage bucket named product-images.
-
-  The products.image_path field stores the
-  image path inside that bucket.
-*/
-
-function getProductImage(imagePath) {
-
+function getCatalogueImage(imagePath) {
   if (!imagePath) return null;
-
   const cleanPath = String(imagePath)
     .replace(/^\/+/, "");
-
   const { data } = supabase
     .storage
     .from("product-images")
     .getPublicUrl(cleanPath);
-
   return data.publicUrl;
-
 }
-
-
-/* ================= IMAGE PLACEHOLDER ================= */
-
-function createImagePlaceholder(wrapper) {
-
-  const placeholder = document.createElement("div");
-
-  placeholder.className = "image-placeholder";
-
-  const symbol = document.createElement("span");
-
-  symbol.textContent = "▧";
-
-  const text = document.createElement("p");
-
-  text.textContent = "Image unavailable";
-
-  placeholder.append(symbol, text);
-
-  wrapper.replaceChildren(placeholder);
-
-}
-
-
-/* ================= PRODUCT CARD ================= */
-
-function createProductCard(product) {
-
-  const card = document.createElement("article");
-
-  card.className = "product-card";
-
-
-  /* IMAGE */
-
-  const imageWrapper = document.createElement("div");
-
-  imageWrapper.className = "product-image-wrapper";
-
-  if (product.image_path) {
-
-    const image = document.createElement("img");
-
-    image.className = "product-image";
-
-    image.alt = product.name || "Automotive spare part";
-
-    image.loading = "lazy";
-
-    image.src = getProductImage(product.image_path);
-
-    image.addEventListener("error", () => {
-
-      createImagePlaceholder(imageWrapper);
-
-    });
-
-    imageWrapper.appendChild(image);
-
-  } else {
-
-    createImagePlaceholder(imageWrapper);
-
-  }
-
-
-  /* DETAILS */
-
-  const details = document.createElement("div");
-
-  details.className = "product-details";
-
-
-  /* BRAND */
-
-  if (product.brand) {
-
-    const brand = document.createElement("span");
-
-    brand.className = "product-brand";
-
-    brand.textContent = product.brand;
-
-    details.appendChild(brand);
-
-  }
-
-
-  /* PRODUCT NAME */
-
-  const name = document.createElement("h2");
-
-  name.className = "product-name";
-
-  name.textContent = product.name || "Product";
-
-  details.appendChild(name);
-
-
-  /* DESCRIPTION */
-
-  if (product.description) {
-
-    const description = document.createElement("p");
-
-    description.className = "product-description";
-
-    description.textContent = product.description;
-
-    details.appendChild(description);
-
-  }
-
-
-  /* PART NUMBER */
-
-  if (product.part_number) {
-
-    const part = document.createElement("p");
-
-    part.className = "product-part";
-
-    const label = document.createElement("strong");
-
-    label.textContent = "Part Number: ";
-
-    part.append(
-      label,
-      document.createTextNode(product.part_number)
-    );
-
-    details.appendChild(part);
-
-  }
-
-
-  card.append(imageWrapper, details);
-
-  return card;
-
-}
-
-
 /* ================= LOAD CATALOGUE ================= */
-
 async function loadCatalogue() {
-
-  showLoading();
-
+  showStatus("Loading catalogue...");
   const params = new URLSearchParams(
     window.location.search
   );
-
   const slug = params.get("category");
-
-
-  /* CHECK CATEGORY */
-
   if (!slug) {
-
     showStatus(
-      "Please select a product category from the Products menu."
+      "Please select a catalogue from the Products menu."
     );
-
     return;
-
   }
-
-
   try {
-
-    /* ================= GET CATEGORY ================= */
-
+    /* GET CATEGORY */
     const { data: category, error: categoryError } =
       await supabase
         .from("categories")
@@ -753,179 +316,95 @@ async function loadCatalogue() {
         .eq("slug", slug)
         .eq("is_active", true)
         .maybeSingle();
-
     if (categoryError) {
       throw categoryError;
     }
-
     if (!category) {
-
       showStatus(
         "Category not found. Please check the category slug in Supabase."
       );
-
       return;
-
     }
-
-
-    /* ================= GET PRODUCTS ================= */
-
-    const { data: products, error: productsError } =
+    /* GET ONE CATALOGUE IMAGE */
+    const { data: product, error: productError } =
       await supabase
         .from("products")
-        .select(`
-          id,
-          name,
-          description,
-          part_number,
-          brand,
-          image_path,
-          is_active,
-          created_at
-        `)
+        .select("image_path")
         .eq("category_id", category.id)
         .eq("is_active", true)
-        .order("created_at", { ascending: false });
-
-
-    if (productsError) {
-      throw productsError;
+        .not("image_path", "is", null)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+    if (productError) {
+      throw productError;
     }
-
-
-    /* ================= PAGE TITLE ================= */
-
+    /* PAGE TITLE */
+    const headingText = category.name
+      .replace(/\s+category$/i, "")
+      .trim()
+      .toUpperCase();
     document.title =
-      `${category.name} | First Priority Auto Spare Parts`;
-
-
-    /* ================= EMPTY CATEGORY ================= */
-
-    if (!products || products.length === 0) {
-
-      content.replaceChildren();
-
-      const heading = document.createElement("div");
-
-      heading.className = "catalogue-heading";
-
-      const small = document.createElement("small");
-
-      small.textContent = "Our Products";
-
-      const title = document.createElement("h1");
-
-      title.textContent = category.name;
-
-      const description = document.createElement("p");
-
-      description.textContent =
-        "Explore our automotive product range.";
-
-      heading.append(small, title, description);
-
-      const empty = document.createElement("div");
-
-      empty.className = "status";
-
-      const symbol = document.createElement("span");
-
-      symbol.className = "status-icon";
-
-      symbol.textContent = "📦";
-
-      const message = document.createElement("p");
-
-      message.textContent =
-        "No products are currently available in this category.";
-
-      empty.append(symbol, message);
-
-      content.append(heading, empty);
-
-      return;
-
-    }
-
-
-    /* ================= DISPLAY PRODUCTS ================= */
-
-    content.replaceChildren();
-
-
-    /* HEADING */
-
-    const heading = document.createElement("div");
-
-    heading.className = "catalogue-heading";
-
-    const small = document.createElement("small");
-
-    small.textContent = "Our Products";
-
-    const title = document.createElement("h1");
-
-    title.textContent = category.name;
-
-    const description = document.createElement("p");
-
-    description.textContent =
-      `Explore our ${category.name} product range.`;
-
-    heading.append(small, title, description);
-
-
-    /* PRODUCT GRID */
-
-    const grid = document.createElement("div");
-
-    grid.className = "product-grid";
-
-    products.forEach(product => {
-
-      grid.appendChild(
-        createProductCard(product)
+      `${headingText} | First Priority Auto Spare Parts`;
+    /* CHECK IMAGE */
+    if (!product || !product.image_path) {
+      showStatus(
+        "The catalogue image has not been uploaded yet."
       );
-
+      return;
+    }
+    /* GET IMAGE URL */
+    const imageURL =
+      getCatalogueImage(product.image_path);
+    if (!imageURL) {
+      showStatus(
+        "Unable to find the catalogue image."
+      );
+      return;
+    }
+    /* CREATE HEADING */
+    const heading = document.createElement("div");
+    heading.className = "catalogue-heading";
+    const title = document.createElement("h1");
+    title.textContent = headingText;
+    heading.appendChild(title);
+    /* CREATE LARGE IMAGE */
+    const imageContainer = document.createElement("div");
+    imageContainer.className =
+      "catalogue-image-container";
+    const image = document.createElement("img");
+    image.className = "catalogue-image";
+    image.alt = `${headingText} catalogue`;
+    image.src = imageURL;
+    image.addEventListener("error", () => {
+      showStatus(
+        "Unable to display the image. Please check the Storage image path and bucket permissions.",
+        "error-message"
+      );
     });
-
-
-    content.append(heading, grid);
-
-
+    imageContainer.appendChild(image);
+    content.replaceChildren(
+      heading,
+      imageContainer
+    );
   } catch (error) {
-
     console.error(
       "Catalogue loading error:",
       error
     );
-
     showStatus(
-      "Unable to load products. Please check your Supabase connection and database permissions.",
+      "Unable to load the catalogue. Please check your Supabase connection and database permissions.",
       "error-message"
     );
-
     const retry = document.createElement("button");
-
     retry.className = "retry-button";
-
     retry.textContent = "Try Again";
-
     retry.addEventListener("click", loadCatalogue);
-
     content.appendChild(retry);
-
   }
-
 }
-
-
 /* ================= INITIALISE ================= */
-
 loadCatalogue();
-
 </script>
-
 </body>
 </html>
