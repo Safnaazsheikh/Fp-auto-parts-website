@@ -9,1101 +9,1008 @@
 
 <style>
 :root {
-  --navy: #062747;
-  --navy-deep: #031a31;
-  --blue: #079ac7;
-  --blue-bright: #16b6e5;
-  --pale-blue: #eaf7fc;
-  --ink: #153247;
-  --muted: #637786;
-  --surface: #f4f8fb;
-  --white: #fff;
-  --border: #e2eaf0;
-  --shadow: 0 16px 42px rgba(6,39,71,.10);
-  --radius: 16px;
-  --container: 1200px;
+  --navy:#062747;
+  --navy-deep:#031a31;
+  --blue:#079ac7;
+  --blue-bright:#16b6e5;
+  --pale-blue:#eaf7fc;
+  --ink:#153247;
+  --muted:#637786;
+  --surface:#f4f8fb;
+  --white:#fff;
+  --border:#e2eaf0;
+  --shadow:0 16px 42px rgba(6,39,71,.10);
+  --radius:16px;
+  --container:1200px;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
 }
 
 body {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  color: var(--ink);
-  background: var(--white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+  display:block;
+  max-width:100%;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color:inherit;
+  text-decoration:none;
 }
 
 button {
-  font: inherit;
-  cursor: pointer;
+  font:inherit;
+  cursor:pointer;
 }
 
 .container {
-  width: min(var(--container), calc(100% - 48px));
-  margin-inline: auto;
+  width:min(var(--container),calc(100% - 48px));
+  margin-inline:auto;
 }
 
 /* ================= HEADER ================= */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid rgba(226,234,240,.9);
-  box-shadow: 0 5px 22px rgba(6,39,71,.055);
-  backdrop-filter: blur(12px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid rgba(226,234,240,.9);
+  box-shadow:0 5px 22px rgba(6,39,71,.055);
+  backdrop-filter:blur(12px);
 }
 
 .navbar {
-  min-height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  min-width: 245px;
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  min-width:245px;
 }
 
 .brand-logo {
-  width: 62px;
-  height: 62px;
-  flex: 0 0 62px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #fff;
+  width:62px;
+  height:62px;
+  flex:0 0 62px;
+  object-fit:contain;
+  border-radius:50%;
+  background:#fff;
 }
 
 .brand-name {
-  color: var(--navy);
-  font-size: 17px;
-  font-weight: 850;
-  line-height: 1.15;
-  letter-spacing: .35px;
+  color:var(--navy);
+  font-size:17px;
+  font-weight:850;
+  line-height:1.15;
+  letter-spacing:.35px;
 }
 
 .brand-name span {
-  display: block;
-  margin-top: 6px;
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2.1px;
+  display:block;
+  margin-top:6px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.1px;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(17px, 2.4vw, 32px);
-  color: #29485d;
-  font-size: 13px;
-  font-weight: 750;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:clamp(17px,2.4vw,32px);
+  color:#29485d;
+  font-size:13px;
+  font-weight:750;
 }
 
 .nav-links > a,
 .dropdown-toggle {
-  transition: color .2s ease;
+  transition:color .2s ease;
 }
 
 .nav-links > a:hover,
 .dropdown-toggle:hover {
-  color: var(--blue);
+  color:var(--blue);
 }
 
 .dropdown {
-  position: relative;
+  position:relative;
 }
 
 .dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 12px 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font-weight: inherit;
-}
-  .dropdown-toggle span {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  top: -4px;
-  line-height: 1;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:12px 0;
+  border:0;
+  background:transparent;
+  color:inherit;
+  font-weight:inherit;
 }
 
+.dropdown-toggle span {
+  position:relative;
+  top:-4px;
+  line-height:1;
+}
+
+/* ================= MAIN DROPDOWN ================= */
+
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: -18px;
-  min-width: 225px;
-  padding: 9px;
-  list-style: none;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--blue);
-  border-radius: 0 0 12px 12px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: .2s ease;
+  position:absolute;
+  top:calc(100% + 8px);
+  left:-18px;
+  min-width:245px;
+  max-height:75vh;
+  overflow:visible;
+  padding:9px;
+  list-style:none;
+  background:#fff;
+  border:1px solid var(--border);
+  border-top:3px solid var(--blue);
+  border-radius:0 0 12px 12px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:.2s ease;
+  z-index:1001;
 }
 
 .dropdown:hover > .dropdown-menu,
 .dropdown:focus-within > .dropdown-menu,
 .dropdown.open > .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 7px;
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 650;
-}
-
-.dropdown-menu a:hover {
-  background: var(--pale-blue);
-  color: var(--blue);
-}
-  /* ================= PRODUCT SUBMENUS ================= */
 
 .dropdown-menu > li {
-  position: relative;
+  position:relative;
 }
 
-.dropdown-menu .submenu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 12px;
-  border: 0;
-  border-radius: 7px;
-  background: transparent;
-  color: var(--ink);
-  font: inherit;
-  font-size: 13px;
-  font-weight: 650;
-  text-align: left;
-  cursor: pointer;
+.dropdown-menu a,
+.submenu-toggle {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:10px 12px;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:var(--ink);
+  font-family:inherit;
+  font-size:13px;
+  font-weight:650;
+  text-align:left;
 }
 
-.dropdown-menu .submenu-toggle:hover {
-  background: var(--pale-blue);
-  color: var(--blue);
+.dropdown-menu a:hover,
+.submenu-toggle:hover {
+  background:var(--pale-blue);
+  color:var(--blue);
 }
 
 .submenu-arrow {
-  margin-left: 12px;
-  font-size: 16px;
-  color: var(--muted);
+  margin-left:12px;
+  color:var(--muted);
+  font-size:17px;
 }
 
+/* ================= SECOND LEVEL DROPDOWN ================= */
+
 .submenu-menu {
-  position: absolute;
-  top: -3px;
-  left: calc(100% + 8px);
-  min-width: 245px;
-  padding: 9px;
-  list-style: none;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--blue);
-  border-radius: 0 0 12px 12px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(7px);
-  transition: .2s ease;
-  z-index: 1002;
+  position:absolute;
+  top:-3px;
+  left:calc(100% - 1px);
+  min-width:255px;
+  max-height:70vh;
+  overflow-y:auto;
+  padding:9px;
+  list-style:none;
+  background:#fff;
+  border:1px solid var(--border);
+  border-top:3px solid var(--blue);
+  border-radius:0 0 12px 12px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(7px);
+  transition:.2s ease;
+  z-index:1002;
 }
 
 .has-submenu:hover > .submenu-menu,
-.has-submenu:focus-within > .submenu-menu,
-.has-submenu.submenu-open > .submenu-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+.has-submenu:focus-within > .submenu-menu {
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
 }
 
 .submenu-menu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 7px;
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 650;
+  display:block;
+  padding:10px 12px;
+  border-radius:7px;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:650;
 }
 
 .submenu-menu a:hover {
-  background: var(--pale-blue);
-  color: var(--blue);
+  background:var(--pale-blue);
+  color:var(--blue);
 }
 
-/* ================= HERO BANNER ================= */
+.menu-toggle {
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  color:var(--navy);
+  font-size:23px;
+}
+
+/* ================= HERO ================= */
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  background: var(--navy-deep);
+  position:relative;
+  overflow:hidden;
+  background:var(--navy-deep);
 }
 
 .hero-carousel {
-  position: relative;
-  min-height: 560px;
-  background: var(--navy-deep);
+  position:relative;
+  min-height:560px;
+  background:var(--navy-deep);
 }
 
 .hero-slide {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: minmax(0,.75fr) minmax(0,1.12fr);
-  align-items: stretch;
-  min-height: 560px;
-  padding: 0;
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity .65s ease, visibility .65s ease;
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(0,1.12fr);
+  align-items:stretch;
+  min-height:560px;
+  color:#fff;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .65s ease,visibility .65s ease;
   background:
-    radial-gradient(ellipse at 46% 50%, rgba(0,119,190,.23), transparent 46%),
+    radial-gradient(ellipse at 46% 50%,rgba(0,119,190,.23),transparent 46%),
     linear-gradient(115deg,#031a31 0%,#062747 58%,#07345b 100%);
 }
 
 .hero-slide.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  z-index: 1;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  z-index:1;
 }
 
 .hero-copy {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  max-width: 660px;
-  padding: 76px max(32px,calc((100vw - var(--container))/2)) 92px
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  width:100%;
+  max-width:660px;
+  padding:76px max(32px,calc((100vw - var(--container))/2)) 92px
            max(24px,calc((100vw - var(--container))/2));
 }
 
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  color: #8edcf4;
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: 2.6px;
-  text-transform: uppercase;
+.hero-copy h1 {
+  max-width:none;
+  font-size:clamp(36px,3.7vw,52px);
+  line-height:1.12;
+  letter-spacing:-1.6px;
 }
 
-.hero-kicker::before {
-  content: "";
-  width: 27px;
-  height: 2px;
-  background: var(--blue-bright);
-}
-
-.hero-copy h1.hero-headline {
-  max-width: none;
-  font-size: clamp(36px,3.7vw,52px);
-  line-height: 1.12;
-  letter-spacing: -1.6px;
-}
-
-.hero-headline span {
-  display: block;
-  white-space: nowrap;
+.hero-copy h1 span {
+  display:block;
+  white-space:nowrap;
 }
 
 .hero-copy p {
-  max-width: 480px;
-  margin-bottom: 30px;
-  color: #d4e5f1;
-  font-size: 16px;
-  line-height: 1.8;
+  max-width:480px;
+  margin-bottom:30px;
+  color:#d4e5f1;
+  font-size:16px;
+  line-height:1.8;
 }
 
 .hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  flex-wrap: wrap;
+  display:flex;
+  align-items:center;
+  gap:17px;
+  flex-wrap:wrap;
 }
 
 .hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 21px;
-  border: 1px solid var(--blue-bright);
-  border-radius: 8px;
-  background: var(--blue);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 800;
-  transition: .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 21px;
+  border:1px solid var(--blue-bright);
+  border-radius:8px;
+  background:var(--blue);
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s ease;
 }
 
 .hero-btn:hover {
-  background: #fff;
-  color: var(--navy);
-  border-color: #fff;
-  transform: translateY(-2px);
+  background:#fff;
+  color:var(--navy);
+  border-color:#fff;
+  transform:translateY(-2px);
 }
 
 .hero-media {
-  position: relative;
-  width: 100%;
-  min-height: 560px;
-  padding: 20px 15px 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: transparent;
+  position:relative;
+  width:100%;
+  min-height:560px;
+  padding:20px 15px 65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
 .hero-media::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 22%;
-  background: linear-gradient(90deg,#062747,rgba(6,39,71,0));
-  pointer-events: none;
-  z-index: 1;
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:22%;
+  background:linear-gradient(90deg,#062747,rgba(6,39,71,0));
+  pointer-events:none;
+  z-index:1;
 }
 
 .hero-media img {
-  display: block;
-  width: 100%;
-  height: 490px;
-  max-height: 490px;
-  object-fit: contain;
-  object-position: center;
-  border: none;
-  border-radius: 28px;
-  box-shadow: none;
-  mix-blend-mode: lighten;
-  transform: translateY(-25px);
+  width:100%;
+  height:490px;
+  max-height:490px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:28px;
+  mix-blend-mode:lighten;
+  transform:translateY(-25px);
 }
-  /* Align EPINA DENKI, EXP and TOUCH RELAY banners */
 
 .hero-slide:nth-of-type(4) .hero-media::before,
 .hero-slide:nth-of-type(5) .hero-media::before,
 .hero-slide:nth-of-type(6) .hero-media::before {
-    display: none;
+  display:none;
 }
 
 .hero-slide:nth-of-type(4) .hero-media img,
 .hero-slide:nth-of-type(5) .hero-media img,
 .hero-slide:nth-of-type(6) .hero-media img {
-    width: 100%;
-    height: 490px;
-    max-height: 490px;
-    object-fit: contain;
-    object-position: center;
-    mix-blend-mode: normal;
-    transform: scale(1.08);
+  width:100%;
+  height:490px;
+  object-fit:contain;
+  mix-blend-mode:normal;
+  transform:scale(1.08);
 }
-/* Adjust VEETHREE banner position only */
+
 .hero-slide:nth-child(2) .hero-media img {
-  transform: translateY(20px);
+  transform:translateY(20px);
 }
-  /* Adjust FP banner position only */
+
 .hero-slide:nth-child(3) .hero-media img {
-  transform: translateY(0px);
-}
-.hero-brand-mark {
-  display: none;
+  transform:translateY(0);
 }
 
 .hero-arrow {
-  position: absolute;
-  z-index: 5;
-  top: 50%;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,.4);
-  border-radius: 50%;
-  background: rgba(3,26,49,.58);
-  color: #fff;
-  font-size: 24px;
-  transform: translateY(-50%);
-  transition: .2s ease;
+  position:absolute;
+  z-index:5;
+  top:50%;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:50%;
+  background:rgba(3,26,49,.58);
+  color:#fff;
+  font-size:24px;
+  transform:translateY(-50%);
+  transition:.2s ease;
 }
 
 .hero-arrow:hover {
-  background: var(--blue);
-  border-color: var(--blue);
+  background:var(--blue);
+  border-color:var(--blue);
 }
 
-.hero-prev { left: 22px; }
-.hero-next { right: 22px; }
+.hero-prev {left:22px;}
+.hero-next {right:22px;}
 
 .hero-dots {
-  position: absolute;
-  z-index: 10;
-  left: 50%;
-  bottom: 18px;
-  display: flex;
-  gap: 9px;
-  transform: translateX(-50%);
+  position:absolute;
+  z-index:10;
+  left:50%;
+  bottom:18px;
+  display:flex;
+  gap:9px;
+  transform:translateX(-50%);
 }
 
 .hero-dot {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: 0;
-  border-radius: 20px;
-  background: rgba(255,255,255,.48);
-  transition: width .25s ease,background .25s ease;
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:20px;
+  background:rgba(255,255,255,.48);
+  transition:width .25s ease,background .25s ease;
 }
 
 .hero-dot.active {
-  width: 28px;
-  background: #fff;
+  width:28px;
+  background:#fff;
 }
 
 /* ================= GENERAL SECTIONS ================= */
 
 .section {
-  padding: 78px 0;
+  padding:78px 0;
 }
 
 .section-heading {
-  max-width: 680px;
-  margin: 0 auto 42px;
-  text-align: center;
+  max-width:680px;
+  margin:0 auto 42px;
+  text-align:center;
 }
 
 .section-heading small {
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
 }
 
 .section-heading h2 {
-  margin: 8px 0 10px;
-  color: var(--navy);
-  font-size: clamp(29px,3vw,40px);
-  line-height: 1.15;
-  letter-spacing: -.7px;
+  margin:8px 0 10px;
+  color:var(--navy);
+  font-size:clamp(29px,3vw,40px);
+  line-height:1.15;
+  letter-spacing:-.7px;
 }
 
 .section-heading p {
-  color: var(--muted);
-  font-size: 15px;
+  color:var(--muted);
+  font-size:15px;
 }
 
 /* ================= TRUSTED BRANDS ================= */
 
 .brand-section {
-  background: var(--surface);
+  background:var(--surface);
 }
 
 .brand-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
 }
 
 .brand-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 210px;
-  padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: 0 8px 25px rgba(6,39,71,.045);
-  transition: transform .25s ease,box-shadow .25s ease;
+  position:relative;
+  overflow:hidden;
+  min-height:210px;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:0 8px 25px rgba(6,39,71,.045);
+  transition:transform .25s ease,box-shadow .25s ease;
 }
 
 .brand-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
 }
 
 .brand-card::after {
-  content: "";
-  position: absolute;
-  right: -38px;
-  bottom: -60px;
-  width: 155px;
-  height: 155px;
-  border-radius: 50%;
-  background: radial-gradient(circle,rgba(7,154,199,.13),transparent 70%);
+  content:"";
+  position:absolute;
+  right:-38px;
+  bottom:-60px;
+  width:155px;
+  height:155px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(7,154,199,.13),transparent 70%);
 }
 
 .brand-card-label {
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: 1.8px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:1.8px;
 }
 
 .brand-card h3 {
-  margin: 9px 0 5px;
-  color: var(--navy);
-  font-size: 22px;
+  margin:9px 0 5px;
+  color:var(--navy);
+  font-size:22px;
 }
 
 .brand-card p {
-  max-width: 290px;
-  color: var(--muted);
-  font-size: 13px;
+  max-width:290px;
+  color:var(--muted);
+  font-size:13px;
 }
 
 .brand-card a {
-  display: inline-flex;
-  margin-top: 18px;
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 850;
+  display:inline-flex;
+  margin-top:18px;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:850;
 }
 
 /* ================= WHY FIRST PRIORITY ================= */
 
 .why-section {
-  background: #fff;
+  background:#fff;
 }
 
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
 .why-card {
-  padding: 25px 21px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  background: #fff;
-  transition: .25s ease;
+  padding:25px 21px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:#fff;
+  transition:.25s ease;
 }
 
 .why-card:hover {
-  border-color: rgba(7,154,199,.55);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(6,39,71,.07);
+  border-color:rgba(7,154,199,.55);
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(6,39,71,.07);
 }
 
 .why-icon {
-  display: grid;
-  place-items: center;
-  width: 49px;
-  height: 49px;
-  margin-bottom: 19px;
-  border-radius: 13px;
-  background: var(--pale-blue);
-  color: var(--blue);
-  font-size: 23px;
-  font-weight: 800;
+  display:grid;
+  place-items:center;
+  width:49px;
+  height:49px;
+  margin-bottom:19px;
+  border-radius:13px;
+  background:var(--pale-blue);
+  color:var(--blue);
+  font-size:23px;
+  font-weight:800;
 }
 
 .why-card h3 {
-  margin-bottom: 8px;
-  color: var(--navy);
-  font-size: 16px;
+  margin-bottom:8px;
+  color:var(--navy);
+  font-size:16px;
 }
 
 .why-card p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
 }
 
 /* ================= WHO WE SERVE ================= */
 
 .audience-section {
-  background: var(--surface);
+  background:var(--surface);
 }
 
 .audience-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
 .audience-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 190px;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  background: #fff;
-  transition: .25s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-height:190px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:#fff;
+  transition:.25s ease;
 }
 
 .audience-card:hover {
-  border-color: var(--blue);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(6,39,71,.07);
+  border-color:var(--blue);
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(6,39,71,.07);
 }
 
 .audience-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 17px;
-  border-radius: 13px;
-  background: var(--pale-blue);
-  color: var(--blue);
-  font-size: 22px;
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  margin-bottom:17px;
+  border-radius:13px;
+  background:var(--pale-blue);
+  color:var(--blue);
+  font-size:22px;
 }
 
 .audience-card h3 {
-  margin-bottom: 7px;
-  color: var(--navy);
-  font-size: 15px;
+  margin-bottom:7px;
+  color:var(--navy);
+  font-size:15px;
 }
 
 .audience-card p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
 }
 
-/* ================= CONTACT CTA ================= */
+/* ================= CONTACT ================= */
 
 .contact-section {
-  position: relative;
-  overflow: hidden;
+  position:relative;
+  overflow:hidden;
   background:
     radial-gradient(circle at 85% 15%,rgba(22,182,229,.2),transparent 28%),
     linear-gradient(115deg,#031a31,#06416a);
-  color: #fff;
-  text-align: center;
+  color:#fff;
+  text-align:center;
 }
 
 .contact-section h2 {
-  margin-bottom: 12px;
-  color: #fff;
-  font-size: clamp(29px,3vw,39px);
+  margin-bottom:12px;
+  color:#fff;
+  font-size:clamp(29px,3vw,39px);
 }
 
 .contact-section p {
-  max-width: 620px;
-  margin: 0 auto 25px;
-  color: #d1e2ed;
-  font-size: 14px;
+  max-width:620px;
+  margin:0 auto 25px;
+  color:#d1e2ed;
+  font-size:14px;
 }
 
 .contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 23px;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 850;
-  transition: .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 23px;
+  border-radius:8px;
+  background:#fff;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:850;
+  transition:.2s ease;
 }
 
 .contact-btn:hover {
-  background: var(--blue-bright);
-  color: #fff;
+  background:var(--blue-bright);
+  color:#fff;
 }
 
 /* ================= FOOTER ================= */
 
 .site-footer {
-  padding: 25px 0;
-  background: #12344c;
-  color: #fff;
-  text-align: center;
+  padding:25px 0;
+  background:#12344c;
+  color:#fff;
+  text-align:center;
 }
 
 .footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  text-align:center;
 }
 
 .footer-inner p {
-  font-size: 12px;
-  text-align: center;
+  font-size:12px;
 }
 
 /* ================= TABLET ================= */
 
-@media (max-width: 1020px) {
-  .navbar {
-    gap: 16px;
-  }
-
-  .brand {
-    min-width: 215px;
-  }
-
+@media(max-width:1020px) {
+  .navbar {gap:16px;}
+  .brand {min-width:215px;}
   .brand-logo {
-    width: 55px;
-    height: 55px;
-    flex-basis: 55px;
+    width:55px;
+    height:55px;
+    flex-basis:55px;
   }
-
-  .brand-name {
-    font-size: 15px;
-  }
-
+  .brand-name {font-size:15px;}
   .nav-links {
-    gap: 15px;
-    font-size: 12px;
+    gap:15px;
+    font-size:12px;
   }
-
   .hero-carousel,
   .hero-slide,
   .hero-media {
-    min-height: 500px;
+    min-height:500px;
   }
-
   .hero-copy {
-    padding-top: 65px;
-    padding-bottom: 80px;
+    padding-top:65px;
+    padding-bottom:80px;
   }
-
-  .hero-copy h1 {
-    font-size: clamp(36px,4.5vw,52px);
-  }
-
   .why-grid,
   .audience-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 760px) {
+@media(max-width:760px) {
   .container {
-    width: min(100% - 36px,var(--container));
+    width:min(100% - 36px,var(--container));
   }
 
-  .navbar {
-    min-height: 74px;
-  }
+  .navbar {min-height:74px;}
 
   .brand {
-    min-width: 0;
-    gap: 9px;
+    min-width:0;
+    gap:9px;
   }
 
   .brand-logo {
-    width: 48px;
-    height: 48px;
-    flex-basis: 48px;
+    width:48px;
+    height:48px;
+    flex-basis:48px;
   }
 
-  .brand-name {
-    font-size: 13px;
-  }
+  .brand-name {font-size:13px;}
 
   .brand-name span {
-    font-size: 8px;
-    letter-spacing: 1.5px;
+    font-size:8px;
+    letter-spacing:1.5px;
   }
 
   .menu-toggle {
-    display: grid;
-    place-items: center;
+    display:grid;
+    place-items:center;
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 4px;
-    padding: 14px 20px 20px;
-    border-top: 1px solid var(--border);
-    background: #fff;
-    box-shadow: 0 14px 24px rgba(6,39,71,.1);
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display:none;
+    align-items:stretch;
+    flex-direction:column;
+    gap:4px;
+    padding:14px 20px 20px;
+    border-top:1px solid var(--border);
+    background:#fff;
+    box-shadow:0 14px 24px rgba(6,39,71,.1);
   }
 
-  .nav-links.open {
-    display: flex;
-  }
+  .nav-links.open {display:flex;}
 
   .nav-links > a,
   .dropdown-toggle {
-    display: flex;
-    width: 100%;
-    padding: 12px 8px;
+    display:flex;
+    width:100%;
+    padding:12px 8px;
   }
 
+  /* MOBILE MAIN MENU */
+
   .dropdown-menu {
-    position: static;
-    display: none;
-    min-width: 0;
-    padding: 5px;
-    border: 0;
-    border-left: 2px solid var(--blue);
-    border-radius: 0;
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    position:static;
+    display:none;
+    min-width:0;
+    max-height:65vh;
+    overflow-y:auto;
+    padding:5px;
+    border:0;
+    border-left:2px solid var(--blue);
+    border-radius:0;
+    box-shadow:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
   }
 
   .dropdown.open > .dropdown-menu {
-  display: block;
-}
-
-/* MOBILE PRODUCT SUBMENUS */
-
-.submenu-menu {
-  position: static;
-  display: none;
-  min-width: 0;
-  margin: 3px 0 5px 12px;
-  padding: 4px;
-  border: 0;
-  border-left: 2px solid var(--blue);
-  border-radius: 0;
-  box-shadow: none;
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-.has-submenu.submenu-open > .submenu-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-.submenu-menu a {
-  padding: 10px 12px;
-  font-size: 12px;
-}
-
-  .hero-carousel {
-    min-height: 0;
+    display:block;
   }
+
+  /* MOBILE SUBMENU */
+
+  .submenu-menu {
+    position:static;
+    display:none;
+    min-width:0;
+    max-height:none;
+    overflow:visible;
+    margin:3px 0 5px 12px;
+    padding:4px;
+    border:0;
+    border-left:2px solid var(--blue);
+    border-radius:0;
+    box-shadow:none;
+    opacity:1;
+    visibility:hidden;
+    transform:none;
+  }
+
+  .has-submenu.submenu-open > .submenu-menu {
+    display:block;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+  }
+
+  .submenu-menu a {
+    padding:10px 12px;
+    font-size:12px;
+  }
+
+  /* MOBILE HERO */
+
+  .hero-carousel {min-height:0;}
 
   .hero-slide {
-    position: relative;
-    display: none;
-    grid-template-columns: 1fr;
-    min-height: 0;
+    position:relative;
+    display:none;
+    grid-template-columns:1fr;
+    min-height:0;
   }
 
-  .hero-slide.active {
-    display: grid;
-  }
+  .hero-slide.active {display:grid;}
 
   .hero-copy {
-    order: 1;
-    max-width: none;
-    padding: 48px 28px 25px;
+    order:1;
+    max-width:none;
+    padding:48px 28px 25px;
   }
 
-  .hero-kicker {
-    margin-bottom: 13px;
-    font-size: 9px;
-    letter-spacing: 1.8px;
-  }
-
-  .hero-copy h1.hero-headline {
-    font-size: clamp(27px,7.2vw,40px);
-    line-height: 1.15;
+  .hero-copy h1 {
+    font-size:clamp(27px,7.2vw,40px);
+    line-height:1.15;
   }
 
   .hero-copy p {
-    max-width: 540px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    line-height: 1.65;
+    max-width:540px;
+    margin-bottom:20px;
+    font-size:13px;
+    line-height:1.65;
   }
 
   .hero-btn {
-    padding: 12px 16px;
-    font-size: 12px;
+    padding:12px 16px;
+    font-size:12px;
   }
 
   .hero-media {
-    min-height: 250px;
-    padding: 0 10px 25px;
+    min-height:250px;
+    padding:0 10px 25px;
   }
 
   .hero-media img {
-    width: 100%;
-    height: 220px;
-    max-height: 220px;
-    object-fit: contain;
-    transform: none;
+    width:100%;
+    height:220px;
+    max-height:220px;
+    object-fit:contain;
+    transform:none;
   }
 
-  .hero-media::before {
-    display: none;
-  }
+  .hero-media::before {display:none;}
 
   .hero-arrow {
-    top: auto;
-    bottom: 112px;
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
+    top:auto;
+    bottom:112px;
+    width:36px;
+    height:36px;
+    font-size:20px;
   }
 
-  .hero-prev { left: 10px; }
-  .hero-next { right: 10px; }
+  .hero-prev {left:10px;}
+  .hero-next {right:10px;}
 
-  .hero-dots {
-    bottom: 17px;
-  }
+  .hero-dots {bottom:17px;}
 
-  .section {
-    padding: 55px 0;
-  }
+  .section {padding:55px 0;}
 
-  .section-heading {
-    margin-bottom: 30px;
-  }
+  .section-heading {margin-bottom:30px;}
 
-  .section-heading p {
-    font-size: 13px;
-  }
+  .section-heading p {font-size:13px;}
 
   .brand-grid {
-  grid-template-columns: 1fr;
-  gap: 13px;
-}
-
-.brand-card,
-.brand-card:nth-child(4),
-.brand-card:nth-child(5) {
-  grid-column: auto;
-}
-  .brand-card {
-    min-height: 175px;
-    padding: 23px;
+    grid-template-columns:1fr;
+    gap:13px;
   }
+
+  .brand-card {min-height:175px;padding:23px;}
 
   .why-grid,
   .audience-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 12px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
   }
 
   .why-card,
   .audience-card {
-    padding: 18px 15px;
+    padding:18px 15px;
   }
 
   .why-card h3,
-  .audience-card h3 {
-    font-size: 14px;
-  }
+  .audience-card h3 {font-size:14px;}
 
   .why-card p,
-  .audience-card p {
-    font-size: 11px;
-  }
+  .audience-card p {font-size:11px;}
 
   .why-icon,
   .audience-icon {
-    width: 43px;
-    height: 43px;
-    margin-bottom: 13px;
+    width:43px;
+    height:43px;
+    margin-bottom:13px;
   }
 
-  .contact-section h2 {
-    font-size: 29px;
-  }
-
-  .contact-section p {
-    font-size: 13px;
-  }
+  .contact-section h2 {font-size:29px;}
+  .contact-section p {font-size:13px;}
 }
 
-  @media (max-width: 480px) {
-    .brand-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 380px) {
-  .container {
-    width: calc(100% - 28px);
-  }
-
-  .brand-name {
-    font-size: 11px;
-  }
-
-  .hero-copy {
-    padding-inline: 21px;
-  }
-
+@media(max-width:380px) {
+  .container {width:calc(100% - 28px);}
+  .brand-name {font-size:11px;}
+  .hero-copy {padding-inline:21px;}
   .why-grid,
   .audience-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce) {
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+    animation-duration:.01ms !important;
   }
 }
 </style>
@@ -1116,8 +1023,8 @@ button {
 <header class="site-header">
   <div class="container navbar">
 
-    <a href="#home" class="brand"
-       aria-label="First Priority Auto Spare Parts Trading L.L.C home">
+    <a href="index.html" class="brand"
+       aria-label="First Priority home">
 
       <img src="fp-logo.jpeg"
            alt="First Priority logo"
@@ -1132,15 +1039,15 @@ button {
 
     <button class="menu-toggle"
             id="menuToggle"
+            type="button"
             aria-label="Open navigation"
             aria-expanded="false">
       ☰
     </button>
 
-    <nav class="nav-links" id="navLinks"
-         aria-label="Main navigation">
+    <nav class="nav-links" id="navLinks">
 
-      <a href="#home">Home</a>
+      <a href="index.html">Home</a>
 
       <div class="dropdown" id="productsDropdown">
 
@@ -1150,9 +1057,7 @@ button {
           Products <span aria-hidden="true">⌄</span>
         </button>
 
-        <ul class="dropdown-menu" id="navCategoryLinks">
-          <li><a href="/products">View all products</a></li>
-        </ul>
+        <ul class="dropdown-menu" id="navCategoryLinks"></ul>
 
       </div>
 
@@ -1167,17 +1072,15 @@ button {
 
 <!-- ================= HERO CAROUSEL ================= -->
 
-<section class="hero" id="home" aria-label="Featured brands">
+<section class="hero" id="home">
 
   <div class="hero-carousel" id="heroCarousel">
 
     <!-- MICHIBA -->
 
     <article class="hero-slide active" aria-hidden="false">
-
       <div class="hero-copy">
-
-        <h1 class="hero-headline">
+        <h1>
           <span>Brighter Vision</span>
           <span>Better Driving</span>
         </h1>
@@ -1193,28 +1096,22 @@ button {
             Explore Products <span>→</span>
           </a>
         </div>
-
       </div>
 
       <div class="hero-media">
-
         <img src="michiba_banner.jpeg"
-             alt="MICHIBA LEADING THE WAY FORWARD">
-
+             alt="MICHIBA automotive lighting">
       </div>
-
     </article>
 
     <!-- VEETHREE -->
 
     <article class="hero-slide" aria-hidden="true">
-
       <div class="hero-copy">
-
-        <h1 class="hero-headline">
-  Precision in Every<br>
-  Performance.
-</h1>
+        <h1>
+          Precision in Every<br>
+          Performance.
+        </h1>
 
         <p>
           Explore Veethree automotive gauges,
@@ -1227,25 +1124,18 @@ button {
             Explore Products <span>→</span>
           </a>
         </div>
-
       </div>
 
       <div class="hero-media">
-
-        <img src="Veethree_Banner.jpeg"
-             alt="Veethree">
-
+        <img src="Veethree_Banner.jpeg" alt="Veethree">
       </div>
-
     </article>
 
     <!-- FP -->
 
     <article class="hero-slide" aria-hidden="true">
-
       <div class="hero-copy">
-
-         <h1 class="hero-headline">
+        <h1>
           Illuminate Every<br>
           Journey.
         </h1>
@@ -1261,121 +1151,114 @@ button {
             Explore Products <span>→</span>
           </a>
         </div>
-
       </div>
 
       <div class="hero-media">
-
         <img src="fp-led-banner.jpeg"
              alt="FP aftermarket LED lights">
-
       </div>
-
     </article>
 
-    <!-- EPINA DENKI SLIDE -->
-<article class="hero-slide" aria-hidden="true">
-  <div class="hero-copy">
-    <h1>Reliable Power.<br>Dependable Performance.</h1>
-    <p>
-      Discover EPINA DENKI automotive electrical products,
-      including relays, switches and vehicle components.
-    </p>
-    <div class="hero-actions">
-      <a class="hero-btn" href="#products">
-        Explore Products <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-  <div class="hero-media">
-    <img src="epina_denki_banner.jpeg"
-         alt="EPINA DENKI automotive electrical products">
-  </div>
-</article>
+    <!-- EPINA DENKI -->
 
-<!-- EXP SLIDE -->
-<article class="hero-slide" aria-hidden="true">
-  <div class="hero-copy">
-    <h1>Control Every<br>Connection.</h1>
-    <p>
-      Explore EXP automobile electrical switches
-      designed for reliable automotive applications.
-    </p>
-    <div class="hero-actions">
-      <a class="hero-btn" href="#products">
-        Explore Products <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-  <div class="hero-media">
-    <img src="exp-banner.jpeg"
-         alt="EXP automotive electrical switches">
-  </div>
-</article>
+    <article class="hero-slide" aria-hidden="true">
+      <div class="hero-copy">
+        <h1>
+          Reliable Power.<br>
+          Dependable Performance.
+        </h1>
 
-<!-- TOUCH RELAY SLIDE -->
-<article class="hero-slide" aria-hidden="true">
-  <div class="hero-copy">
-    <h1>Reliable Switching.<br>Smarter Performance.</h1>
-    <p>
-      Discover Touch Relay automotive relays
-      engineered for dependable electrical switching.
-    </p>
-    <div class="hero-actions">
-      <a class="hero-btn" href="#products">
-        Explore Products <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-  <div class="hero-media">
-    <img src="touch_relay_banner.jpeg"
-         alt="Touch Relay automotive relay products">
-  </div>
-</article>
+        <p>
+          Discover EPINA DENKI automotive electrical products,
+          including relays, switches and vehicle components.
+        </p>
+
+        <div class="hero-actions">
+          <a class="hero-btn" href="/products">
+            Explore Products <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="epina_denki_banner.jpeg"
+             alt="EPINA DENKI automotive products">
+      </div>
+    </article>
+
+    <!-- EXP -->
+
+    <article class="hero-slide" aria-hidden="true">
+      <div class="hero-copy">
+        <h1>
+          Control Every<br>
+          Connection.
+        </h1>
+
+        <p>
+          Explore EXP automobile electrical switches
+          designed for reliable automotive applications.
+        </p>
+
+        <div class="hero-actions">
+          <a class="hero-btn" href="/products">
+            Explore Products <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="exp-banner.jpeg"
+             alt="EXP automotive switches">
+      </div>
+    </article>
+
+    <!-- TOUCH RELAY -->
+
+    <article class="hero-slide" aria-hidden="true">
+      <div class="hero-copy">
+        <h1>
+          Reliable Switching.<br>
+          Smarter Performance.
+        </h1>
+
+        <p>
+          Discover Touch Relay automotive relays
+          engineered for dependable electrical switching.
+        </p>
+
+        <div class="hero-actions">
+          <a class="hero-btn" href="/products">
+            Explore Products <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="touch_relay_banner.jpeg"
+             alt="Touch Relay automotive products">
+      </div>
+    </article>
 
     <!-- CAROUSEL CONTROLS -->
 
     <button class="hero-arrow hero-prev"
             id="heroPrev"
             type="button"
-            aria-label="Previous banner">
-      ‹
-    </button>
+            aria-label="Previous banner">‹</button>
 
     <button class="hero-arrow hero-next"
             id="heroNext"
             type="button"
-            aria-label="Next banner">
-      ›
-    </button>
+            aria-label="Next banner">›</button>
 
     <div class="hero-dots" id="heroDots">
-
-      <button class="hero-dot active"
-              type="button"
-              aria-label="Show MICHIBA banner"
-              aria-current="true"></button>
-
-      <button class="hero-dot"
-              type="button"
-              aria-label="Show Veethree banner"></button>
-
-      <button class="hero-dot"
-              type="button"
-              aria-label="Show FP banner"></button>
-      
-      <button class="hero-dot"
-              type="button"
-              aria-label="Show Epina Denki banner"></button>
-      
-       <button class="hero-dot"
-              type="button"
-              aria-label="EXP"></button>
-      
-      <button class="hero-dot"
-              type="button"
-              aria-label="Touch Relay"></button>
-
+      <button class="hero-dot active" aria-label="MICHIBA banner"></button>
+      <button class="hero-dot" aria-label="Veethree banner"></button>
+      <button class="hero-dot" aria-label="FP banner"></button>
+      <button class="hero-dot" aria-label="Epina Denki banner"></button>
+      <button class="hero-dot" aria-label="EXP banner"></button>
+      <button class="hero-dot" aria-label="Touch Relay banner"></button>
     </div>
 
   </div>
@@ -1384,138 +1267,56 @@ button {
 <!-- ================= TRUSTED BRANDS ================= -->
 
 <section class="section brand-section" id="brands">
-
   <div class="container">
 
     <div class="section-heading">
-
       <small>Our Brands</small>
-
       <h2>Trusted Automotive Brands</h2>
-
-      <p>
-        Explore our specialist automotive lighting
-        and gauge brands.
-      </p>
-
+      <p>Explore our specialist automotive lighting and gauge brands.</p>
     </div>
 
     <div class="brand-grid">
 
       <article class="brand-card">
-
-        <span class="brand-card-label">
-          AUTOMOTIVE LIGHTING BULBS
-        </span>
-
+        <span class="brand-card-label">AUTOMOTIVE LIGHTING BULBS</span>
         <h3>MICHIBA</h3>
-
-        <p>
-          Automotive lighting solutions designed
-          for reliable illumination and visibility.
-        </p>
-
-        <a href="/products">
-          Explore products →
-        </a>
-
+        <p>Automotive lighting solutions designed for reliable illumination and visibility.</p>
+        <a href="/products">Explore products →</a>
       </article>
 
       <article class="brand-card">
-
-        <span class="brand-card-label">
-          AUTOMOTIVE GAUGES
-        </span>
-
+        <span class="brand-card-label">AUTOMOTIVE GAUGES</span>
         <h3>VEETHREE</h3>
-
-        <p>
-          Automotive gauges for precision,
-          performance and driving control.
-        </p>
-
-        <a href="/products">
-          Explore products →
-        </a>
-
+        <p>Automotive gauges for precision, performance and driving control.</p>
+        <a href="/products">Explore products →</a>
       </article>
 
       <article class="brand-card">
-
-        <span class="brand-card-label">
-          AFTERMARKET LED LIGHTS
-        </span>
-
+        <span class="brand-card-label">AFTERMARKET LED LIGHTS</span>
         <h3>FP</h3>
-
-        <p>
-          Aftermarket LED lighting solutions
-          combining performance and style.
-        </p>
-
-        <a href="/products">
-          Explore products →
-        </a>
-
+        <p>Aftermarket LED lighting solutions combining performance and style.</p>
+        <a href="/products">Explore products →</a>
       </article>
-      
-      <!-- EPINA DENKI -->
-<article class="brand-card">
-
-  <span class="brand-card-label">
-    AUTOMOTIVE ELECTRICAL PRODUCTS
-  </span>
-
-  <h3>EPINA DENKI</h3>
-
-  <p>
-    Automotive electrical products and components
-    for vehicle applications.
-  </p>
-
-  <a href="/products">
-    Explore products →
-  </a>
-
-</article>
-
-<!-- EXP -->
-<article class="brand-card">
-
-  <span class="brand-card-label">
-    AUTOMOBILE ELECTRICAL SWITCHES
-  </span>
-
-  <h3>EXP</h3>
-
-  <p>
-    Automobile electrical switches for
-    automotive electrical applications.
-  </p>
-
-  <a href="/products">
-    Explore products →
-  </a>
-
-</article>
 
       <article class="brand-card">
+        <span class="brand-card-label">AUTOMOTIVE ELECTRICAL PRODUCTS</span>
+        <h3>EPINA DENKI</h3>
+        <p>Automotive electrical products and components for vehicle applications.</p>
+        <a href="/products">Explore products →</a>
+      </article>
 
-        <span class="brand-card-label">
-          AUTOMOTIVE RELAY
-        </span>
+      <article class="brand-card">
+        <span class="brand-card-label">AUTOMOBILE ELECTRICAL SWITCHES</span>
+        <h3>EXP</h3>
+        <p>Automobile electrical switches for automotive electrical applications.</p>
+        <a href="/products">Explore products →</a>
+      </article>
 
+      <article class="brand-card">
+        <span class="brand-card-label">AUTOMOTIVE RELAY</span>
         <h3>TH RELAY</h3>
-
-        <p>
-          Automobile relays for reliable switching and 
-          automotive electrical applications.
-        </p>
-
-        <a href="/products">
-          Explore products →
-        </a>
-
+        <p>Automobile relays for reliable switching and automotive electrical applications.</p>
+        <a href="/products">Explore products →</a>
       </article>
 
     </div>
@@ -1525,193 +1326,103 @@ button {
 <!-- ================= WHY FIRST PRIORITY ================= -->
 
 <section class="section why-section" id="why-us">
-
   <div class="container">
 
     <div class="section-heading">
-
       <small>Why First Priority</small>
-
       <h2>Experience You Can Rely On</h2>
-
       <p>
         Bringing together industry experience,
-        specialist brands and a diverse automotive
-        product portfolio.
+        specialist brands and a diverse automotive product portfolio.
       </p>
-
     </div>
 
     <div class="why-grid">
 
       <article class="why-card">
-
-        <div class="why-icon" aria-hidden="true">
-          ◷
-        </div>
-
+        <div class="why-icon">◷</div>
         <h3>Established in 2007</h3>
-
-        <p>
-          Built on years of experience in the
-          automotive spare parts industry.
-        </p>
-
+        <p>Built on years of experience in the automotive spare parts industry.</p>
       </article>
 
       <article class="why-card">
-
-        <div class="why-icon" aria-hidden="true">
-          ◈
-        </div>
-
+        <div class="why-icon">◈</div>
         <h3>Specialist Brands</h3>
-
-        <p>
-          Exclusive distribution of MICHIBA and
-          Veethree, alongside our FP lighting range.
-        </p>
-
+        <p>Exclusive distribution of MICHIBA and Veethree, alongside our FP lighting range.</p>
       </article>
 
       <article class="why-card">
-
-        <div class="why-icon" aria-hidden="true">
-          ⚙
-        </div>
-
+        <div class="why-icon">⚙</div>
         <h3>Diverse Product Range</h3>
-
-        <p>
-          Automotive lighting bulbs, gauges and
-          aftermarket LED lighting solutions.
-        </p>
-
+        <p>Automotive lighting bulbs, gauges and aftermarket LED lighting solutions.</p>
       </article>
 
       <article class="why-card">
-
-        <div class="why-icon" aria-hidden="true">
-          ◎
-        </div>
-
+        <div class="why-icon">◎</div>
         <h3>Dubai Based</h3>
-
-        <p>
-          Strategically based in Dubai,
-          United Arab Emirates.
-        </p>
-
+        <p>Strategically based in Dubai, United Arab Emirates.</p>
       </article>
 
     </div>
-
   </div>
 </section>
 
 <!-- ================= WHO WE SERVE ================= -->
 
 <section class="section audience-section" id="customers">
-
   <div class="container">
 
     <div class="section-heading">
-
       <small>Who We Serve</small>
-
       <h2>Supporting Businesses Across the Automotive Industry</h2>
-
-      <p>
-        Serving the diverse needs of automotive
-        businesses and organisations.
-      </p>
-
+      <p>Serving the diverse needs of automotive businesses and organisations.</p>
     </div>
 
     <div class="audience-grid">
 
       <article class="audience-card">
-
-        <div class="audience-icon" aria-hidden="true">
-          ⚙
-        </div>
-
+        <div class="audience-icon">⚙</div>
         <h3>Automotive Workshops</h3>
-
-        <p>
-          Supporting workshops with automotive
-          spare parts and product solutions.
-        </p>
-
+        <p>Supporting workshops with automotive spare parts and product solutions.</p>
       </article>
 
       <article class="audience-card">
-
-        <div class="audience-icon" aria-hidden="true">
-          ▦
-        </div>
-
+        <div class="audience-icon">▦</div>
         <h3>Automotive Retailers</h3>
-
-        <p>
-          Serving automotive spare parts
-          retailers and traders.
-        </p>
-
+        <p>Serving automotive spare parts retailers and traders.</p>
       </article>
 
       <article class="audience-card">
-
-        <div class="audience-icon" aria-hidden="true">
-          ▰
-        </div>
-
+        <div class="audience-icon">▰</div>
         <h3>Transportation Companies</h3>
-
-        <p>
-          Supporting transportation businesses
-          with automotive product requirements.
-        </p>
-
+        <p>Supporting transportation businesses with automotive product requirements.</p>
       </article>
 
       <article class="audience-card">
-
-        <div class="audience-icon" aria-hidden="true">
-          ◫
-        </div>
-
+        <div class="audience-icon">◫</div>
         <h3>Organisations</h3>
-
-        <p>
-          Serving semi-government firms and
-          other business customers.
-        </p>
-
+        <p>Serving semi-government firms and other business customers.</p>
       </article>
 
     </div>
-
   </div>
 </section>
 
 <!-- ================= CONTACT CTA ================= -->
 
 <section class="section contact-section" id="contact">
-
   <div class="container">
 
     <h2>Looking for a Spare Part?</h2>
 
     <p>
       Contact First Priority Auto Spare Parts Trading L.L.C
-      for product information, availability and
-      business enquiries.
+      for product information, availability and business enquiries.
     </p>
 
     <a href="contact.html" class="contact-btn">
-  Get in Touch <span aria-hidden="true">→</span>
-</a>
+      Get in Touch <span>→</span>
+    </a>
 
   </div>
 </section>
@@ -1721,24 +1432,20 @@ button {
 <!-- ================= FOOTER ================= -->
 
 <footer class="site-footer">
-
   <div class="container footer-inner">
-
     <p>
-      © <span id="currentYear"></span>
+      ©️ <span id="currentYear"></span>
       First Priority Auto Spare Parts Trading L.L.C.
       All rights reserved.
     </p>
-
   </div>
-
 </footer>
 
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-/* MOBILE NAVIGATION */
+/* ================= MOBILE NAVIGATION ================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -1748,6 +1455,9 @@ const productsDropdown =
 
 const dropdownToggle =
   productsDropdown.querySelector(".dropdown-toggle");
+
+const navCategoryLinks =
+  document.getElementById("navCategoryLinks");
 
 menuToggle.addEventListener("click", () => {
 
@@ -1768,12 +1478,176 @@ dropdownToggle.addEventListener("click", () => {
 
   const isOpen = productsDropdown.classList.toggle("open");
 
-  dropdownToggle.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
+  dropdownToggle.setAttribute("aria-expanded", String(isOpen));
 
 });
+
+/* ================= PRODUCT CATEGORY MENU ================= */
+
+/*
+  These slugs must match the slug values in your
+  Supabase categories table.
+
+  Each final submenu option opens catalogue.html
+  using its corresponding category slug.
+*/
+
+const productMenu = [
+
+  {
+    name: "Bulb",
+    items: [
+      {name:"Headlight Bulb",slug:"headlight-bulb"},
+      {name:"Tail Light Bulb",slug:"tail-light-bulb"},
+      {name:"Dashboard Bulb",slug:"dashboard-bulb"}
+    ]
+  },
+
+  {
+    name: "Switch",
+    items: [
+      {
+        name:"Epina Ignition Switch (Made in Thailand)",
+        slug:"epina-ignition-switch-made-in-thailand"
+      },
+      {
+        name:"Battery Cut Off Switches",
+        slug:"battery-cut-off-switches"
+      }
+    ]
+  },
+
+  {
+    name: "Touch Relay",
+    items: [
+      {name:"TH Relay",slug:"th-relay"},
+      {name:"KRY",slug:"kry"},
+      {name:"MICHIBA",slug:"michiba"}
+    ]
+  },
+
+  {
+    name: "EXP – Automotive Switches",
+    items: [
+      {name:"Stop Switch",slug:"stop-switch"},
+      {name:"Break Switch",slug:"break-switch"},
+      {name:"Temperature Switch",slug:"temperature-switch"},
+      {name:"Oil Indicator Switch",slug:"oil-indicator-switch"}
+    ]
+  },
+
+  {
+    name: "Veethree",
+    items: [
+      {name:"Fuel Sender",slug:"fuel-sender"},
+      {name:"Gauge",slug:"gauge"},
+      {name:"Temperature Senders",slug:"temperature-senders"},
+      {name:"Oil Senders",slug:"oil-senders"}
+    ]
+  },
+
+  {
+    name: "Horns",
+    items: [
+      {name:"All Horns",slug:"all-horns"}
+    ]
+  },
+
+  {
+    name: "Tail Lights",
+    items: [
+      {name:"Machinery & Trucks",slug:"machinery-trucks"},
+      {name:"Side Lights",slug:"side-lights"}
+    ]
+  },
+
+  {
+    name: "Fog LED Lights",
+    items: [
+      {name:"FP LED Lights",slug:"fp-led-lights"}
+    ]
+  }
+
+];
+
+/* ================= SAFE TEXT ================= */
+
+function escapeHTML(value) {
+
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[char]);
+
+}
+
+/* ================= BUILD PRODUCT MENU ================= */
+
+function createProductMenu() {
+
+  navCategoryLinks.innerHTML = productMenu.map(group => `
+
+    <li class="has-submenu">
+
+      <button
+        type="button"
+        class="submenu-toggle"
+        aria-expanded="false">
+
+        ${escapeHTML(group.name)}
+
+        <span class="submenu-arrow" aria-hidden="true">›</span>
+
+      </button>
+
+      <ul class="submenu-menu">
+
+        ${group.items.map(item => `
+
+          <li>
+
+            <a href="catalogue.html?category=${encodeURIComponent(item.slug)}">
+
+              ${escapeHTML(item.name)}
+
+            </a>
+
+          </li>
+
+        `).join("")}
+
+      </ul>
+
+    </li>
+
+  `).join("");
+
+}
+
+/* ================= MOBILE SUBMENU ================= */
+
+navCategoryLinks.addEventListener("click", event => {
+
+  const toggle = event.target.closest(".submenu-toggle");
+
+  if (!toggle) return;
+
+  const parent = toggle.closest(".has-submenu");
+
+  const isOpen = parent.classList.toggle("submenu-open");
+
+  toggle.setAttribute("aria-expanded", String(isOpen));
+
+});
+
+/* BUILD MENU */
+
+createProductMenu();
+
+/* ================= CLOSE NAVIGATION ================= */
 
 navLinks.querySelectorAll("a").forEach(link => {
 
@@ -1782,17 +1656,21 @@ navLinks.querySelectorAll("a").forEach(link => {
     navLinks.classList.remove("open");
     productsDropdown.classList.remove("open");
 
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
-    menuToggle.textContent = "☰";
+    navCategoryLinks.querySelectorAll(".submenu-open")
+      .forEach(item => item.classList.remove("submenu-open"));
 
-    dropdownToggle.setAttribute("aria-expanded", "false");
+    dropdownToggle.setAttribute("aria-expanded","false");
+
+    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.setAttribute("aria-label","Open navigation");
+
+    menuToggle.textContent = "☰";
 
   });
 
 });
 
-/* HERO CAROUSEL */
+/* ================= HERO CAROUSEL ================= */
 
 const slides = Array.from(
   document.querySelectorAll(".hero-slide")
@@ -1820,10 +1698,7 @@ function showSlide(index) {
 
     slide.classList.toggle("active", active);
 
-    slide.setAttribute(
-      "aria-hidden",
-      String(!active)
-    );
+    slide.setAttribute("aria-hidden", String(!active));
 
   });
 
@@ -1834,7 +1709,7 @@ function showSlide(index) {
     dot.classList.toggle("active", active);
 
     if (active) {
-      dot.setAttribute("aria-current", "true");
+      dot.setAttribute("aria-current","true");
     } else {
       dot.removeAttribute("aria-current");
     }
@@ -1847,6 +1722,7 @@ function stopCarousel() {
 
   if (carouselTimer) {
     window.clearInterval(carouselTimer);
+    carouselTimer = null;
   }
 
 }
@@ -1857,224 +1733,40 @@ function startCarousel() {
 
   carouselTimer = window.setInterval(() => {
     showSlide(activeSlide + 1);
-  }, 6500);
+  },6500);
 
 }
 
 prevButton.addEventListener("click", () => {
-
   showSlide(activeSlide - 1);
   startCarousel();
-
 });
 
 nextButton.addEventListener("click", () => {
-
   showSlide(activeSlide + 1);
   startCarousel();
-
 });
 
-dots.forEach((dot, i) => {
+dots.forEach((dot,i) => {
 
   dot.addEventListener("click", () => {
-
     showSlide(i);
     startCarousel();
-
   });
 
 });
 
-carousel.addEventListener("mouseenter", stopCarousel);
-carousel.addEventListener("mouseleave", startCarousel);
-carousel.addEventListener("focusin", stopCarousel);
-carousel.addEventListener("focusout", startCarousel);
+carousel.addEventListener("mouseenter",stopCarousel);
+carousel.addEventListener("mouseleave",startCarousel);
+carousel.addEventListener("focusin",stopCarousel);
+carousel.addEventListener("focusout",startCarousel);
 
 startCarousel();
 
-/* AUTOMATIC COPYRIGHT YEAR */
+/* ================= COPYRIGHT YEAR ================= */
 
 document.getElementById("currentYear").textContent =
   new Date().getFullYear();
-
-</script>
-
-<!-- ================= SUPABASE CATEGORY NAVIGATION ================= -->
-
-<script>
-
-/* ================= PRODUCT MENU CONFIGURATION ================= */
-
-const productMenu = [
-
-  {
-    name: "Bulb",
-    items: [
-      ["Headlight Bulb", "headlight-bulb.png"],
-      ["Tail Light Bulb", "tail-light-bulb.png"],
-      ["Dashboard Bulb", "dashboard-bulb.png"]
-    ]
-  },
-
-  {
-    name: "Switch",
-    items: [
-      ["Epina Ignition Switch (Made in Thailand)", "epina-ignition-switch-made-in-thailand.png"],
-      ["Battery Cut Off Switches", "battery-cut-off-switches.png"]
-    ]
-  },
-
-  {
-    name: "Touch Relay",
-    items: [
-      ["TH Relay", "th-relay.png"],
-      ["KRY", "kry.png"],
-      ["MICHIBA", "michiba.png"]
-    ]
-  },
-
-  {
-    name: "EXP – Automotive Switches",
-    items: [
-      ["Stop Switch", "stop-switch.png"],
-      ["Break Switch", "break-switch.png"],
-      ["Temperature Switch", "temperature-switch.png"],
-      ["Oil Indicator Switch", "oil-indicator-switch.png"]
-    ]
-  },
-
-  {
-    name: "Veethree",
-    items: [
-      ["Fuel Sender", "fuel-sender.png"],
-      ["Gauge", "gauge.png"],
-      ["Temperature Senders", "temperature-senders.png"],
-      ["Oil Senders", "oil-senders.png"]
-    ]
-  },
-
-  {
-    name: "Horns",
-    items: [
-      ["All Horns", "all-horns.png"]
-    ]
-  },
-
-  {
-    name: "Tail Lights",
-    items: [
-      ["Machinery & Trucks", "machinery-trucks.png"],
-      ["Side Lights", "side-lights.png"]
-    ]
-  },
-
-  {
-    name: "Fog LED Lights",
-    items: [
-      ["FP LED Lights", "fp-led-lights.png"]
-    ]
-  }
-
-];
-
-/* ================= GENERATE PRODUCT MENU ================= */
-
-const navCategoryLinks =
-  document.getElementById("navCategoryLinks");
-
-function createProductMenu() {
-
-  navCategoryLinks.innerHTML = productMenu.map(group => `
-
-    <li class="has-submenu">
-
-      <button
-        type="button"
-        class="submenu-toggle"
-        aria-expanded="false">
-
-        ${group.name.replace(/[&<>"']/g, char => ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;"
-        })[char])}
-
-        <span class="submenu-arrow" aria-hidden="true">›</span>
-
-      </button>
-
-      <ul class="submenu-menu">
-
-        ${group.items.map(item => `
-
-          <li>
-            <a href="catalogue.html?image=${encodeURIComponent(item[1])}&title=${encodeURIComponent(item[0])}">
-              ${item[0]}
-            </a>
-          </li>
-
-        `).join("")}
-
-      </ul>
-
-    </li>
-
-  `).join("") + `
-
-    <li>
-      <a href="catalogue.html">View all products</a>
-    </li>
-
-  `;
-
-}
-
-/* ================= MOBILE SUBMENU TOGGLE ================= */
-
-navCategoryLinks.addEventListener("click", event => {
-
-  const toggle = event.target.closest(".submenu-toggle");
-
-  if (toggle) {
-
-    const parent = toggle.closest(".has-submenu");
-
-    const isOpen = parent.classList.toggle("submenu-open");
-
-    toggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    return;
-  }
-
-  const link = event.target.closest("a");
-
-  if (link) {
-
-    navCategoryLinks
-      .querySelectorAll(".submenu-open")
-      .forEach(item => item.classList.remove("submenu-open"));
-
-    productsDropdown.classList.remove("open");
-    navLinks.classList.remove("open");
-
-    dropdownToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
-    menuToggle.textContent = "☰";
-
-  }
-
-});
-
-/* INITIALISE PRODUCT MENU */
-
-createProductMenu();
 
 </script>
 
